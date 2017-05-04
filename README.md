@@ -8,6 +8,7 @@
 ### Exporting SKY UX 2 issues
   - Open your terminal and change your current directory to the location where you want to download the export utility. 
   - Run `git clone https://github.com/blackbaud/skyux2-github-export` in your terminal. This will clone the export repository in your terminal's current directory.
+  - Run `cd skyux2-github-export` to move into the export utility directory.
   - Run `npm install`.
   - Run `npm run start`.
   - See the `skyux2issues.csv` file has been created in the current directory.
