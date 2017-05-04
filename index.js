@@ -60,7 +60,7 @@
     }
 
     function writeIssuesToFile(issues) {
-        var issueCsvString = 'url,id,title,description,projects,labels,assignees,milestone,status' + '\n',
+        var issueCsvString = 'url,id,title,description,labels,assignees,milestone,status' + '\n',
             i,
             issue,
             id,
@@ -88,7 +88,7 @@
                 assignees = getAssignees(issue.assignees);
               
 
-                issueCsvString += issueUrl + ',' + id + ',' + title + ',' + description + ',' + 'projects' + ',' + labels + ',' + assignees + ',' + milestone + ',' + status + '\n';
+                issueCsvString += issueUrl + ',' + id + ',' + title + ',' + description + ',' + labels + ',' + assignees + ',' + milestone + ',' + status + '\n';
             }
             
         }
