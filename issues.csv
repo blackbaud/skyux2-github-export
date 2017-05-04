@@ -1,0 +1,101 @@
+id,milestone,title,issueUrl
+658,no milestone,"Add accepted types attribute to file input",https://github.com/blackbaud/skyux2/issues/658
+656,no milestone,"Page never loads inIE 10 and lower.   Can we show messaging to user?",https://github.com/blackbaud/skyux2/issues/656
+653,no milestone,"Datepicker connect input",https://github.com/blackbaud/skyux2/issues/653
+652,no milestone,"Time Picker - preliminary pull request",https://github.com/blackbaud/skyux2/issues/652
+651,no milestone,"Add folder that prevents code coverage from processing files",https://github.com/blackbaud/skyux2/issues/651
+650,no milestone,"Add appropriate karma timeouts to Builder CI builds",https://github.com/blackbaud/skyux2/issues/650
+649,Block 3 Sprint 2 - 5/5/2017,"Document static assets",https://github.com/blackbaud/skyux2/issues/649
+648,Block 3 Sprint 2 - 5/5/2017,"Update hosting docs to reflect new self-provisioning site",https://github.com/blackbaud/skyux2/issues/648
+647,Block 3 Sprint 2 - 5/5/2017,"Convert docs to use Stache 2 components",https://github.com/blackbaud/skyux2/issues/647
+646,no milestone,"Skyux CLI project does not work on Win10 IE11 ",https://github.com/blackbaud/skyux2/issues/646
+645,no milestone,"File attachments file-drop component without `allowLinks` is off center",https://github.com/blackbaud/skyux2/issues/645
+643,no milestone,"Add debug flag to `skyux watch` that disables code coverage",https://github.com/blackbaud/skyux2/issues/643
+642,no milestone,"SKY UX apps now showing transpiled JavaScript rather than TypeScript in debugger",https://github.com/blackbaud/skyux2/issues/642
+638,no milestone,"Explore fixing coverage reports after screenshots that are automatically committed back",https://github.com/blackbaud/skyux2/issues/638
+637,no milestone,"Sky-wait blocked element isn't obscured by modal mask",https://github.com/blackbaud/skyux2/issues/637
+635,no milestone,"Modal Tab Behavior Different Than Sky UX 1",https://github.com/blackbaud/skyux2/issues/635
+633,Block 3 Sprint 2 - 5/5/2017,"Address internal/external content on documentation site",https://github.com/blackbaud/skyux2/issues/633
+631,no milestone,"Use npm shrinkwrap for dependencies",https://github.com/blackbaud/skyux2/issues/631
+622,no milestone,"I need to swap connection strings / settings for local development vs production",https://github.com/blackbaud/skyux2/issues/622
+621,no milestone,"Wizard plunker demo throws an error when opening modal",https://github.com/blackbaud/skyux2/issues/621
+615,no milestone,"Feature request: use semantic versioning",https://github.com/blackbaud/skyux2/issues/615
+609,no milestone,"Key info text is too large #537",https://github.com/blackbaud/skyux2/issues/609
+606,no milestone,"Add a "primary" dropdown button",https://github.com/blackbaud/skyux2/issues/606
+605,no milestone,"Document standard animation implementation",https://github.com/blackbaud/skyux2/issues/605
+604,no milestone,"Define padding & margins by usage",https://github.com/blackbaud/skyux2/issues/604
+603,no milestone,"Add a fluid grid layout system",https://github.com/blackbaud/skyux2/issues/603
+602,no milestone,"Status text classes",https://github.com/blackbaud/skyux2/issues/602
+601,no milestone,"Add command to CLI to link existing project to new repo",https://github.com/blackbaud/skyux2/issues/601
+600,no milestone,"Grids have scrollbars on Windows",https://github.com/blackbaud/skyux2/issues/600
+599,no milestone,"Disabled Tabs are enabled on small screens",https://github.com/blackbaud/skyux2/issues/599
+598,no milestone,"Update lists to watch for changes on data",https://github.com/blackbaud/skyux2/issues/598
+597,Block 3 Sprint 2 - 5/5/2017,"GH issue export/download utility",https://github.com/blackbaud/skyux2/issues/597
+594,Block 3 Sprint 2 - 5/5/2017,"File attachments does not restrict Windows 7 file selector window according to file types",https://github.com/blackbaud/skyux2/issues/594
+592,Block 3 Sprint 2 - 5/5/2017,"File attachments allows MSI and JSON files to be uploaded despite not being in acceptedTypes",https://github.com/blackbaud/skyux2/issues/592
+590,no milestone,"Add ability to run accessibility scripts like AXE",https://github.com/blackbaud/skyux2/issues/590
+589,no milestone,"Add ability to specify X-Frame-Options header to builder",https://github.com/blackbaud/skyux2/issues/589
+585,no milestone,"Document building and hosting outside of the SKY UX Host system",https://github.com/blackbaud/skyux2/issues/585
+584,no milestone,"Document how configuration is passed through the builder and runtime area",https://github.com/blackbaud/skyux2/issues/584
+582,no milestone,"Google Analytics",https://github.com/blackbaud/skyux2/issues/582
+581,no milestone,"Post Build Process - Service Worker Pre-cache for App Shell",https://github.com/blackbaud/skyux2/issues/581
+578,no milestone,"Add skyux build succeeded/failed message",https://github.com/blackbaud/skyux2/issues/578
+577,no milestone,"Time picker",https://github.com/blackbaud/skyux2/issues/577
+575,no milestone,"Inline add/edit/delete",https://github.com/blackbaud/skyux2/issues/575
+574,no milestone,"Simple confirmation dialog",https://github.com/blackbaud/skyux2/issues/574
+573,no milestone,"Vertical tabs",https://github.com/blackbaud/skyux2/issues/573
+572,no milestone,"Enhancements for Avatar",https://github.com/blackbaud/skyux2/issues/572
+571,no milestone,"Port & enhance Help Button from SkyUX",https://github.com/blackbaud/skyux2/issues/571
+570,no milestone,"Document how to use help service with builder",https://github.com/blackbaud/skyux2/issues/570
+565,no milestone,"Plunker examples do not work in IE 11",https://github.com/blackbaud/skyux2/issues/565
+562,no milestone,"Expose way to easily serve site after running build",https://github.com/blackbaud/skyux2/issues/562
+558,no milestone,"Document including a .scss for a component in the Create a component tutorial",https://github.com/blackbaud/skyux2/issues/558
+554,no milestone,"Add infrastructure around pact testing",https://github.com/blackbaud/skyux2/issues/554
+552,no milestone,"Localization features in builder",https://github.com/blackbaud/skyux2/issues/552
+551,no milestone,"Fill in missing CSS styles",https://github.com/blackbaud/skyux2/issues/551
+550,no milestone,"Implement theming capabilities using CSS styles",https://github.com/blackbaud/skyux2/issues/550
+549,no milestone,"Upgrade to Angular 4",https://github.com/blackbaud/skyux2/issues/549
+548,no milestone,"Full page modal needs larger header text",https://github.com/blackbaud/skyux2/issues/548
+542,no milestone,"Closeable Tab has too much right padding",https://github.com/blackbaud/skyux2/issues/542
+541,no milestone,"Wizard action bar does not match SkyUX",https://github.com/blackbaud/skyux2/issues/541
+539,no milestone,"Pagination styling missing some interactions",https://github.com/blackbaud/skyux2/issues/539
+538,no milestone,"Search placeholder text should be italic",https://github.com/blackbaud/skyux2/issues/538
+537,no milestone,"Key info text is too large",https://github.com/blackbaud/skyux2/issues/537
+536,no milestone,"Grid styling does not match SkyUX",https://github.com/blackbaud/skyux2/issues/536
+535,no milestone,"File attachment styling does not match SkyUX",https://github.com/blackbaud/skyux2/issues/535
+533,no milestone,"Base font color does not match SkyUX ",https://github.com/blackbaud/skyux2/issues/533
+527,no milestone,"linting errors in test and e2e do not fail build",https://github.com/blackbaud/skyux2/issues/527
+525,no milestone,"Hook in file drop to avatar",https://github.com/blackbaud/skyux2/issues/525
+520,Block 3 Sprint 2 - 5/5/2017,"Create SkyRouterLink and SkyRouterLinkActive directives",https://github.com/blackbaud/skyux2/issues/520
+519,no milestone,"Enable greenkeeper",https://github.com/blackbaud/skyux2/issues/519
+518,no milestone,"Port over sectioned modal from SKY UX ",https://github.com/blackbaud/skyux2/issues/518
+517,no milestone,"Add remaining font classes from SkyUX",https://github.com/blackbaud/skyux2/issues/517
+516,no milestone,"Document Builder utilities",https://github.com/blackbaud/skyux2/issues/516
+514,no milestone,"Modal wait",https://github.com/blackbaud/skyux2/issues/514
+513,no milestone,"Allow for coverage gates to be set for skyux test from skyuxconfig.json",https://github.com/blackbaud/skyux2/issues/513
+503,no milestone,"Modals opening and removing the scrollbar causes content behind the modal to shift",https://github.com/blackbaud/skyux2/issues/503
+498,Block 3 Sprint 2 - 5/5/2017,"Add breadcrumb navigation to SKY UX 2 documentation site",https://github.com/blackbaud/skyux2/issues/498
+497,no milestone,"Add search box to SKY UX 2 Components page",https://github.com/blackbaud/skyux2/issues/497
+494,no milestone,"Tree view - find in tree",https://github.com/blackbaud/skyux2/issues/494
+493,no milestone,"Tree view - complex multiselect cases",https://github.com/blackbaud/skyux2/issues/493
+492,no milestone,"Tree view - MVP",https://github.com/blackbaud/skyux2/issues/492
+491,no milestone,"Single file attachment",https://github.com/blackbaud/skyux2/issues/491
+489,no milestone,"Need ability to specify size of modal",https://github.com/blackbaud/skyux2/issues/489
+487,no milestone,"Wait visual regression tests fail on Windows",https://github.com/blackbaud/skyux2/issues/487
+478,no milestone,"Focus not placed on modal when opening ",https://github.com/blackbaud/skyux2/issues/478
+466,no milestone,"Review components documentation",https://github.com/blackbaud/skyux2/issues/466
+465,no milestone,"Documentation around fat arrow functions",https://github.com/blackbaud/skyux2/issues/465
+464,no milestone,"Documentation around Flexbox",https://github.com/blackbaud/skyux2/issues/464
+463,no milestone,"Document integration with Auth service",https://github.com/blackbaud/skyux2/issues/463
+460,no milestone,"Document future automated deployment strategy",https://github.com/blackbaud/skyux2/issues/460
+459,no milestone,"Document using custom style sheets",https://github.com/blackbaud/skyux2/issues/459
+458,no milestone,"Document connecting a project to a BFF/UIService",https://github.com/blackbaud/skyux2/issues/458
+454,no milestone,"Document recommendations for dev machine setup",https://github.com/blackbaud/skyux2/issues/454
+453,no milestone,"Document continuous integration layer",https://github.com/blackbaud/skyux2/issues/453
+451,no milestone,"Document a model example of how to do a unit test",https://github.com/blackbaud/skyux2/issues/451
+450,no milestone,"Document how to make web requests and best practices for observables.",https://github.com/blackbaud/skyux2/issues/450
+449,no milestone,"Document best practice/recommendation for smaller, cohesive components.",https://github.com/blackbaud/skyux2/issues/449
+448,no milestone,"Build mode should not affect auth/omnibar/help",https://github.com/blackbaud/skyux2/issues/448
+447,no milestone,"Provide a method of configuring hash routing in easy mode",https://github.com/blackbaud/skyux2/issues/447
+446,no milestone,"Allow overriding of boostrapping without requiring advanced mode",https://github.com/blackbaud/skyux2/issues/446
+445,no milestone,"Add .nvmrc file to skyux-template",https://github.com/blackbaud/skyux2/issues/445

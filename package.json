@@ -1,0 +1,12 @@
+{
+  "name": "skyux2-github-export-issue",
+  "version": "0.0.1",
+  "description": "Export github issues from skyux 2 repo to CSV",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "github": "9.2.0"
+  }
+}

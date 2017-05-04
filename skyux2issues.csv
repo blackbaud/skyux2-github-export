@@ -1,0 +1,1355 @@
+url,id,title,description,projects,labels,assignees,milestone,status
+https://github.com/blackbaud/skyux2/issues/656,656,"Page never loads inIE 10 and lower.   Can we show messaging to user?","I know we don't support IE10 but it is confusing to users who try to access the page on it and see nothing load.  Can host service embed some basic HTML to show a warning banner for IE10 to inform the user that they're browser isn't supported?  We did this in the old version of the sign in site so we can point you to sample code around it.  Something like this:
+
+```
+<!--[if lte IE 10]>
+    BANNER HERE
+<![endif]-->
+```",projects,"","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/651,651,"Add folder that prevents code coverage from processing files","In src/app",projects,"builder","Blackbaud-PaulCrowder",,open,undefined
+https://github.com/blackbaud/skyux2/issues/650,650,"Add appropriate karma timeouts to Builder CI builds","Right now we just use the karma 10 second defaults. We should adjust this up like we do with our Browserstack builds.",projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/649,649,"Document static assets","Document where to create the assets folder and how to reference them using ~/assets/
+
+https://github.com/blackbaud/skyux2/issues/555
+
+",projects,"documentation","blackbaud-johnly",Block 3 Sprint 2 - 5/5/2017,open,undefined
+https://github.com/blackbaud/skyux2/issues/648,648,"Update hosting docs to reflect new self-provisioning site",,projects,"documentation","blackbaud-johnly",Block 3 Sprint 2 - 5/5/2017,open,undefined
+https://github.com/blackbaud/skyux2/issues/647,647,"Convert docs to use Stache 2 components",,projects,"documentation","blackbaud-johnly",Block 3 Sprint 2 - 5/5/2017,open,undefined
+https://github.com/blackbaud/skyux2/issues/646,646,"Skyux CLI project does not work on Win10 IE11 ","Following the steps in the tutorial for a new cli project, after you skyux new up a project and do skyux serve, on IE11 the page just keeps reloading indefinitely.",projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/645,645,"File attachments file-drop component without `allowLinks` is off center","### Expected behavior
+'Drag a file here' button is either centered, or resized to fill a similar width to the file-items below.
+### Actual behavior
+'Drag a file here' button remains the same size, leaving empty space to the right.
+### Steps to reproduce
+Using a file attachments component without `allowLinks`, with or without an uploaded file, button position/size is off center.
+### Plunker 
+https://plnkr.co/edit/ftclZUafkKTyxNajaIhA?p=preview",projects,"","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/644,644,"Publish help-client to NPM",,projects,"builder","Blackbaud-SteveBrush",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/643,643,"Add debug flag to `skyux watch` that disables code coverage","When the `istanbul-instrument-loader` is added to the Webpack config, the instrumented code becomes unreadable.  This is usually fine except for when trying to debug through the original code by navigating to `http://localhost:9876/debug.html` while `skyux watch` is running.  We should add some kind of command line argument (maybe `--debug` or `--no-coverage`) to disable this Webpack loader so that the code becomes readable again and can be stepped through in the browser.",projects,"builder,documentation,enhancement,intermediate","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/642,642,"SKY UX apps now showing transpiled JavaScript rather than TypeScript in debugger","Somewhere along the way an update to SKY UX and/or Builder caused the transpiled JavaScript to be shown in the browser's debugger rather than the original TypeScript.",projects,"bug,builder,intermediate","Blackbaud-SteveBrush",,open,undefined
+https://github.com/blackbaud/skyux2/issues/638,638,"Explore fixing coverage reports after screenshots that are automatically committed back","Baseline screenshots are automatically committed back with `[ci skip]` in the commit message.  This is fine, but because of the skip, a code coverage report is not uploaded (since the commit does not run in Travis.
+
+This means a pull request branched from this commit with cause codedov to display an error saying ""No report found to compare against.""
+
+We should explore fixing this as it happens frequently enough to be annoying.  FYI, this behavior also happens in SKY UX, even more frequently, since `dist/` is committed back.",projects,"","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/637,637,"Sky-wait blocked element isn't obscured by modal mask","### Expected behavior
+Sky-wait appears under the modal, darkened by the mask.
+### Actual behavior
+Sky-wait appears above the modal and mask.
+### Steps to reproduce
+With an element with a blocking sky-wait on the page, open a modal on the page. Sky-wait also blocks interacting with elements on the modal, under the wait mask.
+### Plunker 
+https://plnkr.co/edit/i4DgdS0CKCbKEsaiX8A0?p=preview",projects,"bug,sky-wait","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/635,635,"Modal Tab Behavior Different Than Sky UX 1","### Expected behavior
+In Sky UX 1 when you tab throughout a modal when it reaches the end of the contents it will tab back up to the top of the modal.
+
+### Actual behavior
+In Sky UX 2 when you tab to the end of the modal it will tab into the address bar of the browser and then will tab through things behind the modal before it tabs back to the top of the modal
+
+### Steps to reproduce
+Visible on the respective docs pages for the Sky UX 1 and Sky UX 2 modals.",projects,"bug,sky-modal","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/634,634,"Need ability to extend skyux-builder configs","### Expected behavior
+Would expect to be able to control certain config settings such as:
+
+- karma's browser timeouts
+- folders which istanbul-instrument-loader looks at or
+- folders which istanbul gives coverage for
+
+### Actual behavior
+
+- cannot do any of this.  At one point we could, but it seems files at the root level of the SPA are now
+being ignored.
+
+### Steps to reproduce
+- try to extend an config.  An example of what we tried is this:
+```
+function getConfig(config) {
+
+  require('../node_modules/@blackbaud/skyux-builder/config/karma/shared.karma.conf')(config);
+  config..set({
+    client: {
+      captureConsole: false
+    },
+    browserDisconnectTimeout: 25000,
+    browserNoActivityTimeout: 25000
+  });
+}
+
+module.exports = getConfig;
+```",projects,"builder","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/633,633,"Address internal/external content on documentation site","Review Learn section of the site and remove any content that is clearly only intended for internal use. I think this will mostly be hosting-related content. Move this content to the engineering systems website. Flag any other questionable content and review with the team where to store the documentation.
+
+Leave builder-related content in place, and add a note to call out that while builder is public, it is not open source. Possibly include some sort of contact info for third-party users who are interested in the builder functionality.",projects,"documentation","blackbaud-johnly",Block 3 Sprint 2 - 5/5/2017,open,undefined
+https://github.com/blackbaud/skyux2/issues/631,631,"Use npm shrinkwrap for dependencies",,projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/630,630,"Cannot run e2e tests if productId is configured for help","### Expected behavior
+E2e tests should run
+
+### Actual behavior
+E2e tests hang
+
+### Steps to reproduce
+We have the following help configuration in our skyuxconfig.json:
+""help"": {
+    ""productId"": ""bbid""
+  }
+
+When I run e2e tests I get the following error:  Type '{ ""mode"": string; ""host"": { ""url"": string; }; ""app"": { ""title"": string; }; ""compileMode"": string;...'  is not assignable to type 'SkyuxConfig'. Types of property 'help' are incompatible. Type '{ ""productId"": string; }' is not assignable to type 'SkyuxConfigHelp'. Object literal may only specify known properties, and '""productId""' does not exist in type 'SkyuxConfigHelp'.
+
+If I remove the help configuration then e2e tests run fine.",projects,"bug,builder","Blackbaud-BobbyEarl",Block 3 Sprint 1 - 4/28/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/626,626,"Document updated Karma path for unit tests","Update existing docs to reflect change in https://github.com/blackbaud/skyux-builder/pull/118/files",projects,"documentation","blackbaud-johnly",Block 2 Sprint 8 - 4/21/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/622,622,"I need to swap connection strings / settings for local development vs production","I need a place in skyuxconfig.json to let me add generic app settings, so I can have different values for the production build vs when I run skyux serve locally.",projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/621,621,"Wizard plunker demo throws an error when opening modal","### Expected behavior
+Click button, modal with wizard style tabs opens.
+### Actual behavior
+No modal opens, the following error is displayed in console: `EXCEPTION: Error in wizard-demo.component.html:0:0 caused by: No component factory found for SkyWizardDemoFormComponent. Did you add it to @NgModule.entryComponents?`
+
+### Plunker with possible fix
+https://plnkr.co/edit/ssdMDvPIUWShCYKxeFAJ?p=preview
+",projects,"bug,documentation","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/620,620,"e2e fails on Windows after Builder beta 18","### Expected behavior
+When I run `skyux e2e` the test should run
+
+### Actual behavior
+On Windows only, after upgrading to Sky App Builder beta 18 `skyux e2e` fails due to `The system path cannot find the path specified` when trying to start Protractor
+
+### Steps to reproduce
+1. Do a `skyux new`
+2. Change `package.json` to Sky App Builder beta 18
+3. Do a fresh `npm install`
+4. Run `skyux e2e` 
+5. Observe",projects,"builder","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/617,617,"text-expand component: maxLength not working","### Expected behavior
+To display more text than the default (200 characters) if `maxLength` property set.
+
+### Actual behavior
+Just truncates text to the default (200 characters).
+
+### Steps to reproduce
+Setup component with `maxLength` property.
+
+### Plunker (see example SKY UX 2 plunker template at: https://embed.plnkr.co/cPPULcTfyzUm2rouCgk2/
+",projects,"bug,sky-text-expand","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/615,615,"Feature request: use semantic versioning","Just a request for the the library to use semantic versioning (http://semver.org) so users can have a better handle on breaking changes (like when you update the angular dependencies, etc.).
+
+Also, is there a recommended way to get alerts when your team releases a new npm package?",projects,"","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/614,614,"Update self-signed cert for local dev to include SubjectAltName","A recent change in Chrome 58 has caused SKY UX App Builder consumers to receive invalid certificate errors during local development.  This is because of a new requirement to include hostnames in the certificate's SubjectAltName field.  We need to update the cert to include this data and document the process existing developers need to do to reinstall the cert.
+
+https://textslashplain.com/2017/03/10/chrome-deprecates-subject-cn-matching/
+",projects,"bug,builder","Blackbaud-BobbyEarl",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/613,613,"text-expand AOT compilation failure","### Expected behavior
+To be able to import and use the text-expand component with AOT compilation
+
+### Actual behavior
+AOT has the following errors:
+
+```
+ERROR in /test/src/$$_gendir/node_modules/@blackbaud/skyux/dist/modules/text-expand/text-expand.component.ngfactory.ts (257,18): Property 'containerEl' is private and only accessible within class 'SkyTextExpandComponent'.
+/test/src/$$_gendir/node_modules/@blackbaud/skyux/dist/modules/text-expand/text-expand.component.ngfactory.ts (259,18): Property 'textEl' is private and only accessible within class 'SkyTextExpandComponent'.
+/test/src/$$_gendir/node_modules/@blackbaud/skyux/dist/modules/text-expand/text-expand.component.ngfactory.ts (282,50): Property 'isExpanded' is private and only accessible within class 'SkyTextExpandComponent'.
+/test/src/$$_gendir/node_modules/@blackbaud/skyux/dist/modules/text-expand/text-expand.component.ngfactory.ts (282,77): Property 'expandable' is private and only accessible within class 'SkyTextExpandComponent'.
+/test/src/$$_gendir/node_modules/@blackbaud/skyux/dist/modules/text-expand/text-expand.component.ngfactory.ts (285,44): Property 'expandable' is private and only accessible within class 'SkyTextExpandComponent'.
+```
+
+### Steps to reproduce
+compile using ngc or similar
+
+### Version
+2.0.0-beta.18",projects,"bug","Blackbaud-PatrickOFriel",Block 3 Sprint 1 - 4/28/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/607,607,"Investigate AOT strangeness","We have run into a couple issues when referencing SKYUX 2 classes from builder using AOT. SKY UX will build fine, but runtime errors occur when referencing non-component code like the `SkyMediaBreakpoints` enum, the `ListDataProvider` abstract class, and the `ListDataResponseModel` class. The commonalities with all of these are that they're 'vanilla' TypeScript, not Angular components or services or anything",projects,"bug","Blackbaud-PatrickOFriel",Block 3 Sprint 2 - 5/5/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/606,606,"Add a "primary" dropdown button","### Expected behavior
+Dropdown button can be specified as primary and get primary styling
+
+### Actual behavior
+All dropdowns are standard/secondary
+",projects,"","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/605,605,"Document standard animation implementation","Document parameters and methods for our standard animations as a stopgap until animation can be componentized. 
+
+Slide up/down and left/right
+Expand/collapse
+Emerge/recede",projects,"","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/604,604,"Define padding & margins by usage","Define TRBL padding and margin by usage - e.g. for containers, controls, etc. ",projects,"needs design","Blackbaud-ToddRoberts",,open,undefined
+https://github.com/blackbaud/skyux2/issues/603,603,"Add a fluid grid layout system","Add a grid layout system reflective of Bootstrap's. ",projects,"","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/602,602,"Status text classes","Add text classes reflecting ""status"" of success, warning and danger. 
+
+https://blackbaudinc.box.com/s/a80i6j3t4qu201wi8n8vzy004lhemlop",projects,"","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/601,601,"Add command to CLI to link existing project to new repo","We should support the scenario where a user creates a project locally using `skyux new` and then needs to push it to a new repo.  The user can do this manually but it would be nice to create a command that does it automatically:
+
+- User runs the command
+- Existing files in the folder are copied to a `temp` folder
+- The new remote repo is cloned to the directory
+- Files are moved back out of `temp` folder into the main folder, overwriting any conflicts",projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/600,600,"Grids have scrollbars on Windows","### Expected behavior
+A grid that doesn't have data outside the viewport should not have scrollbard
+
+### Actual behavior
+On Windows, all Sky Grids (both list and non-list) have scrollbars even if the data fits in the view area
+
+### Steps to reproduce
+Go to the Sky docs for the Grid and List View Grid on a Windows machine and observe",projects,"bug,sky-grid","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/599,599,"Disabled Tabs are enabled on small screens","### Expected behavior
+You should not be able to select a disabled tab no matter how the tabs are displayed.
+
+### Actual behavior
+When the screen size is small enough to require tabs to be placed in a drop down, disabled tabs are able to be selected
+
+### Steps to reproduce
+1. Go to the plunker sample below.
+2. Shrink the preview screen until the tabs are placed in a drop down.
+3. Notice that you can select the Disabled tab.
+
+### Plunker
+https://plnkr.co/edit/XH6aXA16tPW4lBfb1dXh?p=preview",projects,"bug,sky-tabset","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/598,598,"Update lists to watch for changes on data","Row now, the list component does not watch for normal data changes, it just sets it initially. It allows the user to set an Observable to the data input and push changes that way, but that does not seem to work when using a custom dataProvider without some rangling. Let's update the list component to have an onChanges hook that updates list data when the data input array is changed, not requiring an Observable to be used.",projects,"sky-listbuilder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/597,597,"GH issue export/download utility",,projects,"automation","Blackbaud-PatrickOFriel",Block 3 Sprint 2 - 5/5/2017,open,undefined
+https://github.com/blackbaud/skyux2/issues/596,596,"Skyux test can timeout at a certain number of tests in the test suite.","### Expected behavior
+Skyux test should be able to handle a lot of tests without timing out
+
+### Actual behavior
+When a certain number of tests is hit (this number changes based on machine setup) then the test runner for Skyux Test will hang after the first test is ran and then timeout. Through observation we were able to see that the hanging always occurs but gets longer the more tests that the suite has. 
+
+### Steps to reproduce
+Add a lot of tests to a Sky App Builder app and run ""skyux test"". We were able to reproduce the issue with around 40 tests using the VSTS Core Services queue but the number seems to vary by machine.
+
+### Example of failed run
+https://blackbaud.visualstudio.com/Products/Nautilus/_build/index?buildId=387579&_a=summary",projects,"builder,documentation","Blackbaud-PatrickOFriel",Block 3 Sprint 1 - 4/28/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/595,595,"Tests fail when importing `SkyAppTestModule`","### Expected behavior
+Tests should not fail.
+
+### Actual behavior
+When I run `skyux test` with a spec file which imports `SkyAppTestModule`, I get the error: 'No provider for SkyAppConfig!'.  I'm not even importing `SkyAppConfig` or using it in my tests.
+
+When i insert `SkyAppConfig` manually into the `SkyAppTestModule`'s list of providers, however, the tests pass.
+
+The method that executes the tests has a conditional check for,
+
+```
+if (skyAppConfig.runtime.includeRouteModule) {
+```
+
+https://github.com/blackbaud/skyux-builder/blob/master/lib/sky-pages-module-generator.js#L54
+
+This value is set to `false`, here: https://github.com/blackbaud/skyux-builder/blob/ffeabbaf6c5edfd169f4acb922ee74a4e890aec3/config/webpack/test.webpack.config.js#L21",projects,"bug,builder","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/594,594,"File attachments does not restrict Windows 7 file selector window according to file types","### Expected behavior
+OS file selector dropdown only has the provided acceptedTypes file types, which hides all files not of those types and prevents users from attempting to upload incorrect file types.
+### Actual behavior
+Clicking on 'click to browse' opens the OS file selector, but any file can be selected due to the dropdown showing 'All files'.
+### Steps to reproduce
+On Windows 7, open the file selector by clicking on the drag/upload button, note that all files are displayed and available for selection despite only specific file types are allowed. Untested on Mac or Linux.
+### Plunker 
+https://plnkr.co/edit/0PIVgL8XGonfcMm5jst5?p=preview",projects,"enhancement,sky-file-drop","Blackbaud-PatrickOFriel",Block 3 Sprint 2 - 5/5/2017,open,undefined
+https://github.com/blackbaud/skyux2/issues/592,592,"File attachments allows MSI and JSON files to be uploaded despite not being in acceptedTypes","### Expected behavior
+File attachments component would reject all files types except jpeg and png.
+### Actual behavior
+.MSI and .JSON files can be uploaded freely (though most other file types are properly rejected).
+### Steps to reproduce
+Upload an MSI or JSON file using the OS file selector or drag/drop one into the browser.
+### Plunker 
+https://plnkr.co/edit/0PIVgL8XGonfcMm5jst5?p=preview",projects,"bug,sky-file-drop","Blackbaud-PatrickOFriel",Block 3 Sprint 2 - 5/5/2017,open,undefined
+https://github.com/blackbaud/skyux2/issues/590,590,"Add ability to run accessibility scripts like AXE",,projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/589,589,"Add ability to specify X-Frame-Options header to builder",,projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/587,587,"Button link hover shows default cursor instead of pointer","### Expected behavior
+Hovering over an button with the `sky-btn-link` or `sky-btn-link-inline` CSS class should show a pointer cursor.
+
+### Actual behavior
+Hovering over an button with the `sky-btn-link` or `sky-btn-link-inline` CSS class should show the default cursor.
+
+### Steps to reproduce
+
+- Open the linked Plunker
+- Hover over the link button
+
+### Plunker (see example SKY UX 2 plunker template at: https://plnkr.co/edit/GeP22YbirEzceF3NVu39?p=preview)
+
+https://plnkr.co/edit/dWcdTw5i9dBcPQ1k0G4K?p=preview",projects,"bug","Blackbaud-PatrickOFriel",Block 3 Sprint 1 - 4/28/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/586,586,"Sky-list initial sort state","Currently the sky-list docs state that the `sortFields` input accepts and object or an array. Right now it only accepts an array. We should update the docs, or make the input accept object values (preferable). 
+
+Working: 
+
+https://plnkr.co/edit/VzYgpipxULUanXwWSiFQ?p=preview
+
+Not working: 
+
+https://plnkr.co/edit/zqmrLgDhUnAFbX63xCiL?p=preview",projects,"bug,sky-listbuilder","Blackbaud-PatrickOFriel",Block 2 Sprint 8 - 4/21/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/585,585,"Document building and hosting outside of the SKY UX Host system","David Owens reached out to Matt Bodily for feedback on the SKY UX 2 docs based on his OTG team's experience. He said info about building and hosting outside of the SKY UX Host system was the only thing that he wasn't able to find in the docs.",projects,"builder,documentation","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/584,584,"Document how configuration is passed through the builder and runtime area","This came up when I asked Bobby about whether we needed to update any existing docs to reflect the changes in https://github.com/blackbaud/skyux-builder/pull/107. That PR doesn't affect current docs, but Bobby thought we should look into documenting some aspects of how config works.",projects,"builder,documentation","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/583,583,"Page-Selector modal pop up doesn't display all columns","### Expected behavior
+Using the column-selector pops up a selector that shows all column headers as options.
+
+### Actual behavior
+Using the column-selector pops up a selector that shows the first 10 headers as options.
+
+### Steps to reproduce
+Attach a column-selector to a list with more than 10 columns.
+
+### Plunker (see example SKY UX 2 plunker template at: https://plnkr.co/edit/GeP22YbirEzceF3NVu39?p=preview)
+https://plnkr.co/edit/EGmpiz79hlA55Sr7sm66?p=preview",projects,"bug,sky-listbuilder","Blackbaud-PatrickOFriel",Block 2 Sprint 8 - 4/21/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/582,582,"Google Analytics","### Expected behavior
+Sites should be able to configure and activate Google Analytics.
+
+### Actual behavior
+No analytics exist.
+
+### Steps to reproduce
+N/A",projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/581,581,"Post Build Process - Service Worker Pre-cache for App Shell","Serving local static resources cache-first means that one can get all the crucial scaffolding for our SkyUX2 web app - The App Shell—on the screen without having to wait for any network responses.
+
+### Expected behavior
+1. Enable everyone to participate in the ecosystem of good!
+2. Enable instant loading of our app shells: on, offline, or in high latency environments. 
+3. Reduce network, cpu, I/O, memory usage of servers and increase load times
+
+### Actual behavior
+Online - App downloads from servers.
+Offline - App does not load.
+Latency - App takes a long time to load or will timeout.
+
+### Steps to reproduce
+Emulate a network disconnection or latency in chrome tools. 
+
+### Resources
+Service Worker Precache 
+https://github.com/GoogleChrome/sw-precache#wrappers-and-starter-kits
+Webpack Plugin for sw-precache
+https://www.npmjs.com/package/sw-precache-webpack-plugin
+Working SkyUX 2 Example
+https://github.com/Blackbaud-JaminQuimby/OTG2017
+
+",projects,"","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/578,578,"Add skyux build succeeded/failed message","### Expected behavior
+When running `skyux build`, I would expect to see whether or not the build succeeded or failed at the very end of the output, preferably with green text when succeeded and red text when failed.  It would also be nice for any errors to be displayed right above the failed message when the build fails so you don't have to scroll up and track down failures.
+
+### Actual behavior
+You currently don't see a message stating whether or not the build succeeded or failed after running skyux build, and the developer has to start scrolling up many lines of text to try and see if any files had an error.",projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/577,577,"Time picker","https://blackbaudinc.box.com/s/o9majdkqxj7r4c3wsn66jhazkv6lognu
+Designer: Rob
+
+Needs resolution around handling time zones",projects,"difficult,enhancement","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/576,576,"Detail panel/side panel","Approved.
+
+Designer: Tim
+
+Panel can contain arbitrary content. Styling/interaction as per RE implementation.
+
+https://blackbaudinc.box.com/s/canqp79aar2b6bhza5y22mw1fqc9faau",projects,"","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/575,575,"Inline add/edit/delete","Approved:
+https://blackbaudinc.box.com/s/z5exryn0zxtboyshjqnr01zf26k7yftr
+
+Designer: Todd",projects,"difficult,enhancement","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/574,574,"Simple confirmation dialog","Approved
+
+Spec/guidelines:
+https://blackbaudinc.box.com/s/vbsh14uhwqz0hqmqxbzihps7h97ttx5l
+
+Designer: Adam",projects,"enhancement,intermediate","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/573,573,"Vertical tabs","https://blackbaudinc.box.com/s/4a6jg0ci2gzvish15aulmujntqnt3nwr
+Approved
+Designer: Tim
+
+See also https://github.com/blackbaud/skyux/issues/899 ",projects,"enhancement,intermediate","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/572,572,"Enhancements for Avatar","Add an control for adding a picture when there is not one set (to make it more obvious that you can do so), and allow for clearing image.
+
+https://blackbaudinc.box.com/s/1c8y649b645ko3wwjgjn71tlvc501t4d
+Approved
+Designer: Nicole",projects,"enhancement,intermediate","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/571,571,"Port & enhance Help Button from SkyUX","Updating the way help is invoked inline to use a blue info icon and give options for the action that is triggered. 
+
+Spec:
+https://blackbaudinc.box.com/s/gfsqrydxbxg80hjm1taozieb5ufjqiup
+
+The help buttons in the Modal header and Omnibar should still use the question mark icon. 
+
+Designer: Todd",projects,"beginner,enhancement","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/570,570,"Document how to use help service with builder",,projects,"builder,documentation","blackbaud-johnly",,open,undefined
+https://github.com/blackbaud/skyux2/issues/568,568,"Card has double top padding when title & checkbox are turned off","## Expected behavior
+Card should just have the 10px from the Content area when Title and Checkbox are turned off
+
+## Actual behavior
+It looks like the padding from the header bar is being maintained when the Title and Checkbox are turned off, so the card ends up having 20px top padding instead of 10px. ",projects,"beginner,bug,sky-card","Blackbaud-PatrickOFriel",Block 2 Sprint 8 - 4/21/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/565,565,"Plunker examples do not work in IE 11",,projects,"","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/564,564,"Modals with enough content to scroll do not scroll in IE11","I wish i could show you a plunker, but you know, your plunkers dont work on IE11. 
+
+this was tested on WIndows 10 64 bit, IE 11 latest version.",projects,"bug,sky-modal","Blackbaud-PatrickOFriel",Block 2 Sprint 7 - 4/14/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/563,563,"Cannot read property substr of undefined","### Expected behavior
+
+SKY UX App should work in production.
+
+### Actual behavior
+
+SKY UX app displays console error `TypeError: Cannot read property 'substr' of undefined`.
+",projects,"bug,builder","Blackbaud-BobbyEarl",Block 2 Sprint 7 - 4/14/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/562,562,"Expose way to easily serve site after running build","Since we perform different steps when running `skyux build` regarding webpack, AOT, etc, it would be convenient to expose a mechanism to allow developers to ""serve"" their ""built"" files.
+
+`skyux e2e` currently performs this, but also fires up protractor, etc.  Refactor that bit out and make callable.  I'm not sure if it makes more sense for this to be a new command or flag for one of the already exists commands.  Possibilities:
+
+- `skyux serve --build`
+- `skyux serve --prod`
+- `skyux build --serve`",projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/558,558,"Document including a .scss for a component in the Create a component tutorial","I added a note to the Create a component tutorial to mention a `.scss` file, but Bobby recommended fleshing out the example in the tutorial to include a `.scss` file in the example. ",projects,"documentation","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/555,555,"Add support for static assets","- [x] Add a way to link static assets within an application https://github.com/blackbaud/skyux-builder/pull/101
+- [x] Publish static assets to CDN https://github.com/blackbaud/skyux-deploy/pull/14
+- [x] Pass `--assets` flag pointing to CDN when running `skyux build` in CI.
+- [ ] Document where to create the `assets` folder and how to reference them using `~/assets/`",projects,"builder,difficult","Blackbaud-BobbyEarl,blackbaud-johnly",Block 3 Sprint 1 - 4/28/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/554,554,"Add infrastructure around pact testing","Make configuring an e2e test using pact testing simple like we did with `SkyAppTestModule`.",projects,"automation,builder,difficult","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/553,553,"Add infrastructure around e2e testing for consumers using auth","We need a way to mock out auth features such as redirecting users to the signin page during e2e tests.",projects,"automation,builder,intermediate","Blackbaud-PaulCrowder",Block 2 Sprint 8 - 4/21/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/552,552,"Localization features in builder","We need to provide a way for consumers to cite localized strings in their code.",projects,"builder,difficult,i18n","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/551,551,"Fill in missing CSS styles","- [ ] What should be the default padding for page contents outside a summary section and tile dashboard?  Currently the text just runs up to the left side of the screen since we have no CSS class to wrap around it.
+
+- [ ] We need to think about common form layouts.  We’ve been getting pinged about the Bootstrap grid system, and this is mostly due to a lack of definition around common form layouts so developers are trying to one-off each design using generic CSS styles.
+
+- [ ] Decide on whether we truly need a grid system.",projects,"difficult,enhancement","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/550,550,"Implement theming capabilities using CSS styles","- [ ] Use YAML format presented by @Blackbaud-ToddRoberts to create both documentation and stylesheet
+- [ ] Generate SASS variables and CSS classes that contain common colors and styles so an application can be themed without rebuilding the app
+
+ ",projects,"difficult,enhancement","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/549,549,"Upgrade to Angular 4",,projects,"difficult,enhancement","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/548,548,"Full page modal needs larger header text","The full page modal should have larger text in the header compared to regular modals (see SkyUX version).
+The header text should be ""sky-section-heading"" style and the ""close"" icon should be 20px. ",projects,"beginner,sky-modal","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/546,546,"Sky-Wait Component doesn't hide absolute positioned elements","### Expected behavior
+`sky-wait` will hide our honeycomb component (grid of hexagons), while we load data to bind to it
+
+### Actual behavior
+`sky-wait` doesn't hide our honeycomb component while waiting
+
+### Steps to reproduce
+try using a `sky-wait` to hide an element with ""position: absolute;"" CSS
+
+### Plunker 
+https://plnkr.co/edit/lls3WrKdGmO9hYux0Wyl?p=preview
+",projects,"bug,sky-wait","Blackbaud-PatrickOFriel",Block 2 Sprint 7 - 4/14/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/545,545,"Make background for wait semi-transparent","@Blackbaud-JonathanBell ",projects,"beginner,sky-wait","Blackbaud-PatrickOFriel",Block 2 Sprint 7 - 4/14/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/542,542,"Closeable Tab has too much right padding","There is too much padding to the right of the close ""x"" on closeable tabs. Should be $padding-half I think. ",projects,"beginner,sky-tabset","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/541,541,"Wizard action bar does not match SkyUX","Action bar buttons should have 10px margin between them, currently they are too crunched together.
+Action bar is missing a Cancel button - is this just something that goes in the demo or part of the component?
+",projects,"beginner,sky-modal","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/539,539,"Pagination styling missing some interactions","Cursor should not change to clickable finger when hovering over a disabled left/right arrow.
+Page button background should have gray hover state like other buttons.",projects,"beginner","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/538,538,"Search placeholder text should be italic","Search placeholder text should be italic rather than regular face. ",projects,"beginner,sky-search","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/537,537,"Key info text is too large","Key info text should be 22px instead of 24px",projects,"beginner,sky-key-info","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/536,536,"Grid styling does not match SkyUX","Row dividers should match the bb-border(row) mixin styling (1px dotted #ccc) 
+Striped row background should be #f8f8f9
+",projects,"beginner,sky-grid","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/535,535,"File attachment styling does not match SkyUX","Header font should be 17px
+
+Drop area:
+Subheader font should be 14px
+Margin between subheader and cloud icon should be 10px, seems to be getting doubled somewhere
+
+Paste area:
+Field placeholder text should be italic",projects,"beginner,sky-file-drop","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/534,534,"Dropdown button hover style should match buttons","Dropdown buttons should have they gray background on hover that other buttons do. ",projects,"dropdown","Blackbaud-PatrickOFriel",Block 2 Sprint 5 - 3/31/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/533,533,"Base font color does not match SkyUX ","Base font should be #292a2b ",projects,"beginner","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/532,532,"Allow SPAs to extend Builder's webpack configs","### Expected behavior
+A SPA can extend the `build`, `serve`, and `test` webpack configurations. The specific use case would more than likely involve custom loaders or plugins.
+
+WIP pull request, located [here](https://github.com/blackbaud/skyux-builder/pull/100).
+
+Ideally, a SPA would be given access to the configuration in a way similar to this (multiple configuration files permitted, all of which would be merged into the respective configuration file):
+```
+{
+  ""mode"": ""easy"",
+  ""compileMode"": ""aot"",
+  ""webpackConfigs"": {
+    ""build"": [""./config/build.webpack.config.js""],
+    ""serve"": [""./config/serve.webpack.config.js""],
+    ""test"": [""./config/test.webpack.config.js""]
+  }
+}
+```
+
+### Actual behavior
+A SPA has no control over the webpack configuration, and cannot augment it to fit a specific need.
+
+### Steps to reproduce
+None.",projects,"builder,enhancement","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/531,531,"Dropdown menu options don't scroll with dropdown when located inside modal content","### Expected behavior
+The options for a dropdown should scroll with a dropdown when inside of a modal.
+
+### Actual behavior
+The dropdown moves but the options do not
+
+### Steps to reproduce
+1. Place a dropdown inside of a modal's content where the content is longer than the available space and thus can scroll.
+2. Click the dropdown.
+3. Scroll without clicking and observe
+
+### Plunker
+https://plnkr.co/edit/eiVI9pJQw5tjlsSxusYT?p=preview",projects,"dropdown","Blackbaud-PatrickOFriel",Block 3 Sprint 1 - 4/28/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/529,529,"SkyWaitService does not work in ngOnInit()","### Expected behavior
+SkyWaitService can block and unblock page during ngOnInit() 
+
+### Actual behavior
+Error: ApplicationRef.tick is called recursively
+
+### Steps to reproduce
+Call this.waitSvc.beginBlockingPageWait() in ngOnInit()
+
+### Plunker (see example SKY UX 2 plunker template at: https://plnkr.co/edit/GeP22YbirEzceF3NVu39?p=preview)
+
+https://plnkr.co/edit/izSTik4tPh1ugLA1FciB?p=preview",projects,"bug,sky-wait","Blackbaud-PatrickOFriel",Block 2 Sprint 7 - 4/14/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/527,527,"linting errors in test and e2e do not fail build","When running `skyux test` and `skyux e2e`, any linting errors are displayed, but do not cause the parent task to fail.",projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/525,525,"Hook in file drop to avatar",,projects,"port,sky-avatar,sky-file-drop","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/524,524,"Text expand "See more" does not clear when text is removed/shortened","### Expected behavior
+When I set the object passed into the ""text"" parameter to undefined I would expect there not to be a ""See more"" button
+
+### Actual behavior
+If the ""text"" parameter is set and then set to undefined the ""See more"" button does not clear
+
+### Steps to reproduce
+1. Create a text expand that is long enough for the ""See more"" button to show up
+2. Set the object passed into the ""text"" parameter to undefined
+3. Observe
+
+### Plunker 
+https://plnkr.co/edit/jrSyJukSMVJmW58BTSQp?p=preview",projects,"bug","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/523,523,"[TEST -- IGNORE] New component ",,projects,"beginner","blackbaud-danbowman",SKY UX 2 General Release,closed,undefined
+https://github.com/blackbaud/skyux2/issues/522,522,"Create unit tests for runtime",,projects,"builder","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/521,521,"Automatically include envid and svcid in SkyAuthHttp requests",,projects,"builder","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/520,520,"Create SkyRouterLink and SkyRouterLinkActive directives",,projects,"builder","Blackbaud-BobbyEarl",Block 3 Sprint 2 - 5/5/2017,open,undefined
+https://github.com/blackbaud/skyux2/issues/519,519,"Enable greenkeeper","We have lots of repos and lots of dependencies.  I believe it's worth the investment to setup https://github.com/integration/greenkeeper to make keeping up-to-date with our dependencies, more manageable.",projects,"","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/518,518,"Port over sectioned modal from SKY UX ",,projects,"intermediate,port","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/517,517,"Add remaining font classes from SkyUX","Some font classes are missing:
+page heading
+headline
+",projects,"beginner","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/516,516,"Document Builder utilities","I got a question from Trevor Foley about documentation for SkyAuthHttp, which Bobby said is ""a file that helps securely pass a user logged in to BBAuth’s token when making calls to a SPA’s backend."" When I asked if there was anything important about it to document for developers, he said yes and suggested creating a ""builder utilities"" section in the docs. So creating this issue as a reminder to create this new section.",projects,"documentation","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/514,514,"Modal wait","Right now, there is no simple way to to have a wait on an entire modal (header, content, footer). We need to decide what wait behavior should look like with modals, and what the best way to implement this is.
+
+Two options I see: 
+  - Allow entire modal to be covered by the wait.
+  - Have modal content covered by the wait and disable buttons in the footer.
+
+@Blackbaud-ToddRoberts what do you think?",projects,"documentation,sky-modal","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/513,513,"Allow for coverage gates to be set for skyux test from skyuxconfig.json","We should allow for users to be able to configure mandatory code coverage thresholds from skyuxconfig. This would allow for users to use these thresholds as build/quality gates in their individual team's build pipeline.",projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/512,512,"Modal style updates","Three changes:
+
+1. Modal header styles currently have too much padding top and bottom because of the padding around the close button.
+
+2. When a sky-btn-link is the first child of a modal footer, it should have negative margin to offset its left padding.
+
+3. Do not show the padding/border of the header and footer if those components are not included within sky-modal",projects,"beginner,sky-modal","Blackbaud-PatrickOFriel",Block 2 Sprint 5 - 3/31/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/510,510,"Document new CLI options","Document the --envid and --svcid options described here: https://github.com/blackbaud/skyux-builder/pull/97/files.",projects,"documentation","blackbaud-johnly",Block 2 Sprint 6 - 4/7/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/507,507,"Document unit testing components that use modals in SKY UX apps","Right now, consumers are having issues creating unit tests when their components involve modals, we should come up with examples of how to do this, and make any changes necessary to make this easy to test.",projects,"documentation","Blackbaud-PatrickOFriel",Block 2 Sprint 7 - 4/14/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/506,506,"Easily allow programmatic access to skyux/runtime config in components",,projects,"builder","Blackbaud-BobbyEarl",Block 2 Sprint 7 - 4/14/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/505,505,"Dropdown runs outside of container on mobile","### Expected behavior
+The text should adjust to the size of the container.
+### Actual behavior
+The text overflows outside of the container.
+
+### Steps to reproduce
+
+1. Open the SKYUX2 documentation for the [Action Button](https://developer.blackbaud.com/skyux2/components/action-button) in Chrome.
+2. Use the device toolbar to view the page on an iPhone 5 (or at 320px width).
+3. Scroll down to Code sample section
+
+![image](https://cloud.githubusercontent.com/assets/9463651/24165513/f79ad15e-0e46-11e7-9b70-29b277da8833.png)
+ ",projects,"beginner,bug","Blackbaud-PatrickOFriel",Block 2 Sprint 6 - 4/7/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/503,503,"Modals opening and removing the scrollbar causes content behind the modal to shift","### Expected behavior
+The content behind a modal should not shift when the modal is opened/closed
+### Actual behavior
+The content behind a modal shifts to one side while the modal is open, and shifts back when it is closed.
+
+This seems to only appear on pages where there is a scrollbar, and the scrollbar appearing/disappearing is causing the shifting.
+### Steps to reproduce
+1. Navigate to https://developer.blackbaud.com/skyux2/components/modal
+2. Open the demo modal
+### Plunker (see example SKY UX 2 plunker template at: https://plnkr.co/edit/GeP22YbirEzceF3NVu39?p=preview)
+See https://developer.blackbaud.com/skyux2/components/modal",projects,"enhancement,intermediate,sky-modal","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/502,502,"Browser not rendering cursor's "pointer" state on span.sky-checkbox","### Expected behavior
+Whenever user hovers on the span element with class `sky-checkbox`, the mouse cursor should be a pointer to indicate an interactive element.
+
+### Actual behavior
+The cursor is the default arrow. This is seen with both Firefox and Chrome on OSx. Visible on [docs page](https://developer.blackbaud.com/skyux2/components/card).
+
+Note: At first glance, it looks like [.sky-checkbox](https://github.com/blackbaud/skyux2/blob/1d722a4c020dc0e61e247606e5b4472c1bead5be/src/modules/checkbox/checkbox.component.scss#L14) does indeed have `cursor:pointer` declared. However, I think the browser is losing context because its parent element is absolutely positioned. A `position:relative` fixes this. Not sure if that's the best implementation though... Need someone smarter than me to make that call :)",projects,"beginner,bug,sky-checkbox","Blackbaud-PatrickOFriel",Block 2 Sprint 5 - 3/31/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/500,500,"Document the app-extras.module.ts file","I'm adding a topic to the references section to describe the items in the default template so that developers will know what each item does and which items to touch vs. which items to ignore. The description for the app-extras.modules.ts file says that it ""Handles tasks such as registering providers and entry components. If this file exists, SKY UX Builder automatically imports it into the build process."" But when I went over this info with Bobby, he said we should add more around this file somewhere else. Maybe as a tutorial. Or maybe in a fleshed out topic about SKY UX Builder. Creating this task as a reminder to look into this topic further.",projects,"documentation","blackbaud-johnly",Block 2 Sprint 8 - 4/21/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/498,498,"Add breadcrumb navigation to SKY UX 2 documentation site","Add breadcrumb navigation to SKY UX 2 documentation pages (https://developer.blackbaud.com/skyux2/), similar to what's on SKY UX 2 documentation pages (https://skyux.developer.blackbaud.com).",projects,"documentation","blackbaud-johnly",Block 3 Sprint 2 - 5/5/2017,open,undefined
+https://github.com/blackbaud/skyux2/issues/497,497,"Add search box to SKY UX 2 Components page","Add the ability for users to find components on the SKY UX 2 Components page (https://developer.blackbaud.com/skyux2/components). ",projects,"documentation","blackbaud-johnly",,open,undefined
+https://github.com/blackbaud/skyux2/issues/494,494,"Tree view - find in tree","Needs design",projects,"enhancement,needs design","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/493,493,"Tree view - complex multiselect cases","More complex multiselect (see linked document)
+
+https://blackbaudinc.box.com/s/qqr2ezc7drgtzhvjeboqovy0yxceoymw
+
+Approved
+Designer: Todd",projects,"enhancement","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/492,492,"Tree view - MVP","MVP portion of design (see linked document)
+
+https://blackbaudinc.box.com/s/qqr2ezc7drgtzhvjeboqovy0yxceoymw 
+
+Approved
+Designer: Todd",projects,"enhancement","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/491,491,"Single file attachment","Simplified mode for attaching a single file.
+
+https://blackbaudinc.box.com/s/jz94gb4f9lrtl4rbgua5uzbrfgf452op
+
+Approved
+Designer: Deborah",projects,"enhancement","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/489,489,"Need ability to specify size of modal","### Expected behavior
+SkyUX1 allows you to specify the size through the uibModalOptions of bbModal.open.  The size can be specified by using a string of ""sm"" or ""lg"" that gets appended to the ""modal-"" css class used to size the modal.  I would expect something similar where we specify more of a conceptual size instead of actual pixels so that modals will have a consistent look and work well with responsive designs.
+
+### Actual behavior
+There doesn't currently appear to be a way to resize unless you override skyux css.",projects,"beginner,enhancement,sky-modal","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/488,488,"Inline link buttons move other content on hover","### Expected behavior
+When I hover on the button I wouldn't expect the other content to be moved by the hover taking up more space
+
+### Actual behavior
+Other content moves when the button is hovered over
+
+### Steps to reproduce
+Place a button with sky-btn-link-inline styling with things below it and hover to observe
+
+### Plunker
+**Sky Ux 1 - Content does not move**
+http://plnkr.co/edit/1quYNZZbcaMG3m1pBvgg?p=preview
+
+**Sky Ux 2**
+https://plnkr.co/edit/4BCQzf75GB8aLsTGgN98?p=preview",projects,"beginner,bug","Blackbaud-PatrickOFriel",Block 2 Sprint 4 - 3/24/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/487,487,"Wait visual regression tests fail on Windows","Whenever I run visual regression tests for Sky Ux 2 on Windows the tests for the wait component fail every time. They all fail with the following issue:
+
+```
+ wait component should display wait on parent:
+Failed: endY is out of range
+running chrome
+undefined: endY is out of range
+```
+
+This occurs even with a fresh pull of master with no changes to the code.",projects,"automation,sky-wait","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/486,486,"Sky dropdown has transparent background","### Expected behavior
+I would expect the dropdown to be white no matter what background it is on
+
+### Actual behavior
+The dropdown is transparent and turns the color of the background
+
+### Steps to reproduce
+Place dropdown on a colored background and observe
+
+### Plunker
+https://plnkr.co/edit/wy2CxxQNrnmEXUVrG9T4?p=preview",projects,"beginner,bug,dropdown","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/483,483,"Default padding on modal is very small","Description From Josh Gerdes:
+The margin/padding on the current modal is from skyux2.  So I’m assuming they are providing the accepted UX patterns for skyux. And will update as skyux UX patterns update.
+
+
+### Expected behavior
+More padding for modals based on accepted UX patterns
+
+### Actual behavior
+Default padding on modal is very small
+
+### Steps to reproduce
+
+![image](https://cloud.githubusercontent.com/assets/21042636/23873948/1eb53ede-07f1-11e7-9c37-af2e74dc4ee2.png)
+",projects,"beginner,bug,sky-modal","Blackbaud-PatrickOFriel",Block 2 Sprint 4 - 3/24/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/481,481,"Create visual test for small screen full page modal","@Blackbaud-JaminQuimby ",projects,"beginner,sky-modal","Blackbaud-PatrickOFriel",Block 2 Sprint 5 - 3/31/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/480,480,"Test out notification system","Ensure that our notifications are hooked up properly so we can react to outages while on call.",projects,"automation","Blackbaud-PatrickOFriel",Block 2 Sprint 5 - 3/31/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/479,479,"Building and testing new omnibar version",,projects,"enhancement","Blackbaud-PaulCrowder",Block 2 Sprint 5 - 3/31/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/478,478,"Focus not placed on modal when opening ","When opening a modal, focus is not placed on the modal header or contents, it should be",projects,"enhancement,intermediate,sky-modal","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/475,475,"Javascript errors thrown on column change of grid","### Expected behavior
+Columns should load and change when updated in the grid
+
+### Actual behavior
+There is a case where, when the columns load after the initial grid setup and should be updated, javascript errors are thrown and the grid breaks.
+
+Error
+```
+TypeError: Cannot read property 'locked' of undefined
+    at View_SkyGridComponent1.detectChangesInternal (/SkyGridModule/SkyGridComponent/component.ngfactory.js:76:58)
+    at View_SkyGridComponent1.AppView.detectChanges (eval at ./node_modules/@angular/core/src/linker/view.js (https://localhost:31337/permissions/vendor.js:1639:1), <anonymous>:438:14)
+    at View_SkyGridComponent1.DebugAppView.detectChanges (eval at ./node_modules/@angular/core/src/linker/view.js (https://localhost:31337/permissions/vendor.js:1639:1), <anonymous>:633:44)
+    at ViewContainer.detectChangesInNestedViews (eval at ./node_modules/@angular/core/src/linker/view_container.js (https://localhost:31337/permissions/vendor.js:1647:1), <anonymous>:71:37)
+    at CompiledTemplate.proxyViewClass.View_SkyGridComponent0.detectChangesInternal (/SkyGridModule/SkyGridComponent/component.ngfactory.js:453:15)
+    at CompiledTemplate.proxyViewClass.AppView.detectChanges (eval at ./node_modules/@angular/core/src/linker/view.js (https://localhost:31337/permissions/vendor.js:1639:1), <anonymous>:438:14)
+```
+
+### Steps to reproduce
+Observe plunker. I have only seen this happen if the columns are loaded during ajax and their is a ""loading"" placeholder column triggered by an ngIf that is replaced once they are loaded. 
+### Plunker
+https://plnkr.co/edit/W8skWejkdLNwNEQiVAJh?p=preview",projects,"sky-grid","Blackbaud-PatrickOFriel",Block 2 Sprint 2 - 3/10/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/471,471,"Action Button does not clear state","### Expected behavior
+When I click on a button at https://developer.blackbaud.com/skyux2/components/action-button, the button stays active (blue) after I have clicked on it and moused away.
+
+### Actual behavior
+When I click on a button at https://developer.blackbaud.com/skyux2/components/action-button, I expect the button to clear its active state.
+
+### Steps to reproduce
+Look at demo
+https://developer.blackbaud.com/skyux2/components/action-button and click one of the two sky action buttons.
+
+### Plunker (see example SKY UX 2 plunker template at: https://plnkr.co/edit/GeP22YbirEzceF3NVu39?p=preview)",projects,"","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/469,469,"Update GitHub READMEs","Update out-of-date content in skyux2 repo's README. Check the READMEs for other SKY UX 2 repos as well. Make sure they link to the docs and that the docs aren’t missing content from READMEs. And follow up on whether we should remove unused/old repos.",projects,"documentation","blackbaud-johnly",Block 2 Sprint 3 - 3/17/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/468,468,"Document how to upgrade Builder","Patrick fielded a question about this from a developer on another team, and I overheard him explain that you need to manually update the version in a JSON file. We don't have that anywhere in the docs, so I assume we need to document it somewhere.",projects,"builder,documentation","blackbaud-johnly",Block 2 Sprint 5 - 3/31/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/467,467,"Update configuration options topic","Go through the questions I noted for these options and get feedback from Bobby or the rest of the team.",projects,"documentation","blackbaud-johnly",Block 2 Sprint 3 - 3/17/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/466,466,"Review components documentation","I started reviewing the components documentation, but I've been sidetracked by other projects. When Kris Mahon reviewed the first draft of the docs, he pointed out the documentation seems lacking for some components. Need to review them for style/grammar/wording/etc. and also to look for holes for developers as best as I can. Here’s Kris’s note: Some of the components seem fairly well documented, but others like “Tiles” seems very lacking (I honestly have no idea how to use the tiles properly from that page – the code shows a directive that isn’t even talked about, and doesn’t show examples of the any of the directives that are mentioned). ",projects,"documentation","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/465,465,"Documentation around fat arrow functions","This was called out in the Angular training, and Adam called it out in his post-training overview that he gave to the API teams. I have a link for fat arrow functions in the learning resources topic, but do we need more?
+",projects,"documentation","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/464,464,"Documentation around Flexbox","This was called out in the Angular training, and Adam recommended it in his post-training overview that he gave to the API teams. I have a link for Flexbox in the learning resources topic, but do we need more? Adam recommended going through the guide and learning Flexbox. He said it's made his life much easier.",projects,"documentation","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/463,463,"Document integration with Auth service","In a Slack thread with me, Jon Bell, and Michael Buhot, Jon mentioned that SKY UX has easy integration with Auth Svc that Michael should take advantage of but that the docs don’t get into it much yet. I assume we need to document this. Touch base with Jon to see what to document and where to document it.",projects,"documentation","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/462,462,"Document how to contribute to SKY UX documentation","We got a suggestion to create documentation around how to add to the SKY UX documentation during the Austin Angular training.",projects,"documentation","blackbaud-johnly",Block 2 Sprint 3 - 3/17/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/460,460,"Document future automated deployment strategy","When Kris Mahon reviewed the first draft of the docs, he asked about this. We hint at the future automated deployment strategy at in the FAQ but Kris said it would be good to flesh that info out and incorporate it into the overview section. Even if it just explains the current/temporary process and then touches on the future process.",projects,"documentation","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/459,459,"Document using custom style sheets","When Kris Mahon reviewed the first draft of the docs, he asked about this. He said that when he worked on RENXT, they had problems with people’s custom style names conflicting with each other and with SKY style names and remembers uniquely prefixing style names with something like “bb-servicename-stylename.” What is the recommended pattern for adding custom styles to SKY UX?  Is there a naming convention/pattern to follow? Do developers need to use scss files, or can they use css files?  How do developers reference the style sheet in their HTML?",projects,"documentation","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/458,458,"Document connecting a project to a BFF/UIService","When Kris Mahon reviewed the first draft of the docs, he asked about this. How do you hook up a SPA to call a “local dev instance” of a BFF/UIService? Basically, to get the SPA to do anything other than serve static HTML, the developer needs to know how to test the SPA against the actual BFF/UIService to serve up data that to display in the SPA. … Then, how do you hook up a SPA to call a “production instance” of the BFF/UIService? Is this handled by the continuous integration layer?",projects,"documentation","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/457,457,"Document recommendations for where to create pages/components","When Kris Mahon reviewed the first draft of the docs, he asked about this. Should developers create anything outside the src/app folder? (We have some documentation around this in the tutorials, but no single loctation with an overview of where to create what.",projects,"documentation","",Block 2 Sprint 5 - 3/31/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/456,456,"Document launch options","When Kris Mahon reviewed the first draft of the docs, he asked for more information about the launch options. How/when/why might you serve “local” vs. “host”? We could include this in the serve a project tutorial and/or the commands technical reference. Probably should document it in one place and link to it from the other.",projects,"documentation","blackbaud-johnly",Block 2 Sprint 2 - 3/10/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/455,455,"Document naming conventions","When Kris Mahon reviewed the first draft of the docs, he asked for recommendations for the spa/root directory name for the create-a-project tutorial. Do we have any recommendations to suggest here? And bigger picture, do we have any other naming recommendations or requirements. We've documented the file types for unit and e2e tests, but I don't think we've documented any other naming conventions.",projects,"documentation","",Block 2 Sprint 5 - 3/31/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/454,454,"Document recommendations for dev machine setup","When Kris Mahon reviewed the first draft of the docs, he asked if we have any additional recommendations for this. For example, do we recommend a particular editor (Visual Studio 2015, Visual Studio Code, a corresponding Mac tool)? Basically, do we recommend any editor or anything else for coding the TypeScript, HTML, CSS, etc.?",projects,"documentation","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/453,453,"Document continuous integration layer","Link from the info in the overview to more fleshed out information. Paul suggested the link in his feedback to the first draft of the documentation. ... Document whatever end users will want/need to know about the continuous integration layer. (Do the same for Builder and Host?)",projects,"documentation","blackbaud-johnly",,open,undefined
+https://github.com/blackbaud/skyux2/issues/452,452,"Document the items in the default project","We have documentation for some of these items, like the skyuxconfig.json file, but we don't have anything for most of the items. When Kris Mahon reviewed the first draft of the docs, he asked for an explanation of the files and folders. He wanted to know which items a developer needs to worry about and which ones can/should be ignored. For example, he asked about the package.json file, where he noticed properties like name, description, version, etc., and he wanted to know if a developer should ever touch this stuff and, if so, when.",projects,"documentation","blackbaud-johnly",Block 2 Sprint 4 - 3/24/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/451,451,"Document a model example of how to do a unit test","This came up in the working group meeting on 3/1. Adam said it would be useful if we had an example. Bobby created a sample unit test for the template, so I think we can use that as the example and walk through how it was created.",projects,"documentation","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/450,450,"Document how to make web requests and best practices for observables.","This came up in the working group meeting on 3/1. Jon Bell suggested this. Paul mentioned the guy who created the change detection stuff and cited an article by him (https://vsavkin.com/change-detection-in-angular-2-4f216b855d4c#.3pajhggyi). At bare minimum, I think we need to add a link to that to the Training resources content. But there was also some discussion about using ""onpush"" for the Angular2 detection strategy. Should we link to something about this? (From my meeting notes, I think this is a public property on your class that is an observable. … From then on, if something pushes values to that observable, you don’t need to rely on the change detection cycle for updates.)",projects,"documentation","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/449,449,"Document best practice/recommendation for smaller, cohesive components.","This came up in the working group meeting on 3/1. Adam mentioned that his constituent.component.html file ended up being pretty big and that one of his takeaways form the project was that he wished he had broken it up into smaller, cohesive components. Paul agreed that it is a good practice to break things up. He said this makes testing easier. By factoring out, you isolate different pieces so that they are immune to changes to the other components. There was agreement that the pieces should be small and single-purpose. And Adam agreed that the larger component led to larger tests that were more difficult to write and more difficult to understand. (He said the longer tests are hard to follow.)
+
+As part of this discussion, someone recommended providing guidance/recommendations in the docs around this.",projects,"documentation","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/448,448,"Build mode should not affect auth/omnibar/help","### Expected behavior
+I should be able to use ""advanced"" mode, but still get the baked-in benefits of Auth, Omnibar, and BBHelp. 
+
+### Actual behavior
+Setting `""mode"": ""advanced""` disregards settings for `auth`, `omnibar`, and `help`. (If this is intended, perhaps a middle ground could be considered?)
+
+### Steps to reproduce
+Set `""mode"": ""advanced""` and `""auth"": true`. Launch the app and Auth is not fired.",projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/447,447,"Provide a method of configuring hash routing in easy mode","In the context of the outlook addin we are required to use hash routing
+
+In app.routing.ts -
+
+`export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes, { useHash: true });`
+
+In order for us to use easy mode, we will need a way of configuring this.",projects,"","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/446,446,"Allow overriding of boostrapping without requiring advanced mode","One of the reasons we have to use skyux advanced mode is we have to override a function from an external library in order to bootstrap correctly.
+
+Here is our bootstrapping code in main.ts
+
+`Office.initialize = function () {
+  platformBrowserDynamic().bootstrapModule(AppModule);
+}`
+
+In order for our project to use easy mode we will need a way to configure this.",projects,"","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/445,445,"Add .nvmrc file to skyux-template","And suggest running (or even run it if nvm exists) `nvm use` in our setup docs after running `skyux new`",projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/440,440,"Document how to test in multiple browsers","### Expected behavior
+
+### Actual behavior
+
+### Steps to reproduce
+
+### Plunker (see example SKY UX 2 plunker template at: https://plnkr.co/edit/GeP22YbirEzceF3NVu39?p=preview)",projects,"documentation","blackbaud-johnly",Block 2 Sprint 2 - 3/10/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/439,439,"Create hosting tutorial for Learn docs",,projects,"documentation","blackbaud-johnly",Block 2 Sprint 2 - 3/10/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/437,437,"Add the error modal service","See http://skyux.developer.blackbaud.com/components/error/",projects,"beginner,port","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/433,433,"Expose a way to change tab programmatically","Either expose a (tabChanged) output on the tabset or expose functions to go to next or previous tab ",projects,"beginner,enhancement,sky-tabset","Blackbaud-PatrickOFriel",Block 2 Sprint 3 - 3/17/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/432,432,"Add documentation to contribution section to check code coverage"," ...locally before submitting a pull request",projects,"documentation","Blackbaud-PatrickOFriel",Block 2 Sprint 2 - 3/10/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/431,431,"Unable to build using auth + aot","First reported by @Blackbaud-TrevorBurch, using `auth: true` and AOT is not currently able to do a build.  The fix for this is simple, but we should add missing e2e tests for this use case.",projects,"builder","Blackbaud-BobbyEarl",Block 2 Sprint 3 - 3/17/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/430,430,"make npm run lint cover demo files","Demo files are linted through the skyux build command, but we should be able to catch those by running npm run lint",projects,"automation","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/429,429,"Auto update builder version in template","Currently, we have to do PR's to update `skyux-template` to the latest version of builder and skyux.
+
+Instead we could not have those defined and the following commands:
+
+`npm install @blackbaud/skyux --save --save-exact`
+`npm install @blackbaud/skyux-builder --save-dev --save-exact`",projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/427,427,"Exclude components/services in fixtures folders from SKY UX app module","Often we need to create components or services strictly for use with unit tests, and these components and services should not be added to the generated SKY UX app module.  A reasonable way to exclude these items would be to filter out any files that reside in a folder called `fixtures`.",projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/425,425,"Action Button should fill width on small viewports","### Expected behavior
+<768px viewport width, buttons should be full width with 15px left-right margins
+
+### Actual behavior
+max-width is set to 236px at all viewport sizes.",projects,"beginner,bug,sky-action-button","Blackbaud-PatrickOFriel",Block 2 Sprint 2 - 3/10/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/423,423,"Add ability to override default route configuration","When we generate routes based on the file system we need to allow the consumer to specify overrides for the generated route, such as `canActivateRoute` and `canActivateChild` which will be SPA-specific.
+
+From https://github.com/blackbaud/skyux-cli/issues/5",projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/422,422,"Ensure hashes are generated consistently across SPA projects","May require use of the ""DLL"" Webpack plugin.
+
+From https://github.com/blackbaud/skyux-cli/issues/9",projects,"deployer","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/421,421,"Consider better wording for SPA root directory prompt","#The ""What is the root directory for your SPA?"" prompt could use some more information about how the value specified here will be the root directory in SKY Pages Host and that a local folder with a prefix of ""sky-pages-spa-"" will be created with it.
+
+From https://github.com/blackbaud/skyux-cli/issues/30",projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/420,420,"Add example unit/e2e tests to project template","From https://github.com/blackbaud/skyux-cli/issues/32",projects,"builder","Blackbaud-BobbyEarl",Block 2 Sprint 1 - 3/3/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/419,419,"Add template + component creation to cli","I like ng-cli's ability to create components, routes, etc.  I think we can add value to that by allowing our consumers to create pages with the necessary template + components.  Something like `skyux create-page list` (see http://skyux.developer.blackbaud.com/guidelines/page-layouts/).
+
+From https://github.com/blackbaud/skyux-cli/issues/56",projects,"builder,enhancement","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/418,418,"e2e command - Allow individual spec file to be passed in ","Originally from @Blackbaud-JonathanBell 
+
+It would be useful for quicker testing to let you pass a spec file to skyux e2e so have it run just that file.  Under the hood, protractor allows this.
+
+From https://github.com/blackbaud/skyux-cli/issues/58",projects,"builder","Blackbaud-PaulCrowder",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/417,417,"Explore automating the certificate install","It would be kind of interesting and time saving if upon installation of the cli, we automatically detect the architecture and run the necessary script to install the certificate.  Something to explore.
+
+From https://github.com/blackbaud/skyux-cli/issues/62",projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/416,416,"Update dependencies in builder","Webpack 2.2.0 has been released with many newer versions of our dependencies.  Hoping to hold off on this until E2E testing is in place.
+
+- [x] Update Webpack
+- [ ] Update Angular to version 4 (after components are updated)
+",projects,"builder","Blackbaud-SteveBrush",Block 3 Sprint 2 - 5/5/2017,open,undefined
+https://github.com/blackbaud/skyux2/issues/415,415,"Investigate integrating entitlements/environment ID with omnibar integration","From https://github.com/blackbaud/skyux-cli/issues/79",projects,"builder","Blackbaud-PaulCrowder",Block 2 Sprint 4 - 3/24/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/414,414,"Create internal e2e tests for auth:true","From https://github.com/blackbaud/skyux-cli/issues/80",projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/413,413,"Allow mechanism to specify global styles","From https://github.com/blackbaud/skyux-cli/issues/81",projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/412,412,"Create example unit and e2e tests in the template","From https://github.com/blackbaud/skyux-cli/issues/83",projects,"builder","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/411,411,"Add TSLint as a separate step to ensure all files are checked","Originally from @Blackbaud-TrevorBurch 
+
+Currently, TSLint is only ran on files under test as part of `skyux test`. We should add a step that allows for all files to be checked by TSLint even if they do not have a .spec.ts file that references them yet.
+
+From https://github.com/blackbaud/skyux-cli/issues/84",projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/410,410,"Combine skyux2 and skyux-builder repos.","After further discussion and watching how user's consume us, we think combining the skyux2 component library and the skyux-builder code might be more efficient and beneficial.
+
+The skyux-cli would remain separate.  It's installed globally which means consumer are less likely to update it (even with the auto prompts to upgrade we implemented).  Keeping that in mind means we want to keep it as lightweight as possible and contain as little logic as possible.
+
+It performs two basic functions:
+
+- Globally register `skyux` as a known command.
+- Handle the commands that can be run outside the context of a project: `skyux help` and `skyux new`
+
+Perhaps as a first past, we could leave the repos/packages separate, but at least have builder require skyux2 (or vice-versa) and remove that requirement in the current skyux-template.
+
+Possible complications to the ""quick"" approach we discussed today.  Even if we took the first approach of removing skyux-builder from the template, and moved it as a dependency for skyux, we'd have to update CLI to either not look in package.json or look for skyux instead.
+
+From https://github.com/blackbaud/skyux-cli/issues/85",projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/409,409,"Update the skyux-cli readme with a link to the learn documentation","Instead of rehashing the documentation from our site in the skyux-cli, update our readme to point to the formal documentation at developer.blackbaud.com/skyux2
+
+From https://github.com/blackbaud/skyux-cli/issues/86",projects,"documentation","blackbaud-johnly",Block 2 Sprint 1 - 3/3/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/408,408,"Add documentation around using route parameters in skyux tutorials","This could possibly also include an example in the `skyux-template`.
+
+From https://github.com/blackbaud/skyux-cli/issues/89",projects,"builder,documentation","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/407,407,"Ensure that code coverage works properly with unit tests in skyux builder apps","From https://github.com/blackbaud/skyux-cli/issues/96",projects,"builder","Blackbaud-BobbyEarl",Block 2 Sprint 1 - 3/3/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/406,406,"Enable HMR","Refactoring webpack config to enable hot module replacement should significantly decrease wait times for developers when running skyux serve. 
+
+From https://github.com/blackbaud/skyux-cli/issues/98",projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/405,405,"Document using app-extras.module.ts","An example on how you could use a third-party component/service...
+
+```
+import { NgModule } from '@angular/core';
+import { DragulaService, DragulaModule } from 'ng2-dragula/ng2-dragula';
+
+// Specify entry components, module-level providers, etc. here.
+@NgModule({
+  imports: [
+    DragulaModule
+  ],
+  exports: [
+    DragulaModule
+  ],
+  providers: [
+    DragulaService
+  ],
+  entryComponents: []
+})
+export class AppExtrasModule { }
+```
+
+From https://github.com/blackbaud/skyux-cli/issues/99",projects,"documentation","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/404,404,"Consider making dragula first-class","If we're suggesting Dragula be *the* way to make something draggable, is it worth making that available first-class, instead of having to do what's exampled in #99
+
+From https://github.com/blackbaud/skyux-cli/issues/100",projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/403,403,"Investigate Neutrino","Either look for inspiration or if it's worth incorporating...
+
+https://neutrino.js.org/
+
+From https://github.com/blackbaud/skyux-cli/issues/101",projects,"builder","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/402,402,"Allow users to specify a browser to open an app in","Originally from @Blackbaud-TrevorBurch 
+
+Currently, `skyux serve` opens the application in the user's default browser. This change would allow for the user to specify an alternative browser to open the application in. This is useful for cross-browser manual testing as, without this option, the user has to change their default browser in order to launch into another browser.
+
+From https://github.com/blackbaud/skyux-cli/issues/102",projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/401,401,"Research Firefox localhost exception","Originally from @Blackbaud-TrevorBurch 
+
+Whenever you try to launch an application into Firefox the application just hangs and never loads. In order to fix this you must navigate to the `localhost` url and then follow the instructions for adding an exception for the localhost url. The warning that is shown when navigating to the `localhost` url is that the connection is not secure. After this is done, the application can launch at the `sky.blackbaud-dev.com` url. We should research whether or not we can configure things so that this exception is not needed and if this is not possible then we should document that this is required when using Firefox. 
+
+https://github.com/blackbaud/skyux-cli/issues/103",projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/400,400,"Support building skyux-builder in Windows","@Blackbaud-JonathanBell and I ran through some issues to make `skyux-builder` easier to test in Windows.
+
+- `npm run coverage` should follow https://github.com/gotwarlost/istanbul#usage-on-windows
+- `npm run lint` throws errors about invalid line endings.  My guess is this is related to not having a `.gitattributes` file.
+- Failing unit test because of forward vs back slash ""should support a custom routesPattern""
+
+From https://github.com/blackbaud/skyux-cli/issues/108",projects,"builder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/399,399,"Flesh out getting started docs","- Add tutorials for testing
+
+- Add tutorial for hosting.
+
+- Continue to address feedback from Kris Mahon.
+
+- Update skyux2 and skyux-cli READMEs.
+
+From https://github.com/blackbaud/skyux-cli/issues/109",projects,"documentation","blackbaud-johnly",Block 2 Sprint 1 - 3/3/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/398,398,"Add `rel="stylesheet"` to our external CSS links","Found by @Blackbaud-PeteLukich, we should add `rel=""stylesheet""` to our external CSS links.  Needed in Builder and Host.
+
+From https://github.com/blackbaud/skyux-cli/issues/110",projects,"builder","Blackbaud-BobbyEarl",Block 2 Sprint 2 - 3/10/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/396,396,"Card selectedChange event does not fire when checkbox is clicked","### Expected behavior
+When I click on a checkbox on a selectable card I would expect the selectedChange event to fire
+
+### Actual behavior
+If you select the main portion of the card the event does fire but if you click directly on the checkbox it does not fire
+
+### Steps to reproduce
+Visit plunker and click on the card (not the checkbox). You will see that ""Test"" is printed below the card. Then click on the checkbox and notice that ""Test"" is not printed again.
+
+### Plunker
+https://plnkr.co/edit/WXBbiuywOMo3OK0XOxn7?p=preview",projects,"beginner,bug,sky-card","Blackbaud-PatrickOFriel",Block 2 Sprint 2 - 3/10/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/393,393,"Toggle switch","https://blackbaudinc.box.com/s/ephc36pep7b7ge5luyiik6j3zjxbain3
+
+Approved
+Designer: Vin
+
+This will likely be built in SkyUX1 by a product team. ",projects,"enhancement","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/389,389,"Modal header content not bold as in Sky Ux 1","### Expected behavior
+The content of a modal's header should be bold as it is in Sky Ux 1
+
+### Actual behavior
+The content is not bold
+
+### Steps to reproduce
+Create a modal with header content and observe
+
+### Plunker
+Can be seen in docs for the modal component.",projects,"","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/388,388,"Port over tab header count (sub)component","Add Tab Header Counts to Tabs component in SKY UX 2.
+
+Tabs component in SKY UX 2:  https://developer.blackbaud.com/skyux2/components/tabs
+
+Tabset component, with Tab Header Count, in SKY UX 1:
+http://skyux.developer.blackbaud.com/components/tabset/
+
+",projects,"beginner,port","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/387,387,"Add checklist single select mode","This should probably just be an additional view for list",projects,"intermediate,sky-checklist","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/386,386,"Upgrade to Angular 2.4.8","We're on 2.4.5 at this point. We should upgrade to the latest stable version",projects,"","Blackbaud-PatrickOFriel",Block 2 Sprint 1 - 3/3/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/382,382,"sky-action-button doesn't load font-awesome class before use in HTML","### Expected behavior
+this.fontSizeClass should be set before the template uses it and the icon should be styled appropriately.
+
+### Actual behavior
+Possible race condition with .subscribe() where call to service doesn't fully resolve before template uses the fontSizeClass property.
+
+### Steps to reproduce
+- Have SPA or site with multiple tabs
+- Have a sky-action-button element with an icon
+- Visit tab containing element
+- Visit another tab
+- Go back to tab containing sky-action-button
+- Notice errors in console
+",projects,"bug","Blackbaud-PatrickOFriel",Block 2 Sprint 1 - 3/3/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/381,381,"Action button font size is not initialized","We have reports of an error with action buttons, where ngClass in the action button component is failing because it's assigned to an undefined variable. We should initialize the ngClass font size variable on property initialization.",projects,"bug","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/379,379,"Add directive around email validation",,projects,"beginner,port","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/378,378,"Add checklist show/hide subset functionality","This should be a filtering option for list so lets finish #170 first",projects,"intermediate,sky-checklist","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/377,377,"Add checklist category dropdown","This is dependent on the inline filters in list functionality #170 ",projects,"intermediate,sky-checklist","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/376,376,"Add checklist show only selected functionality","This should be a part of the list multiselect functionality.",projects,"intermediate,sky-checklist","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/371,371,"Cannot place wait inside of a grid","### Expected behavior
+When placing a sky-wait inside of a sky-grid or sky-list-view grid I would expect the wait to attach to the content area of the grid
+
+### Actual behavior
+An error is recieved when trying to accomplish this.
+
+`Cannot read property 'style' of null` 
+
+### Steps to reproduce
+Place a sky-wait inside of a sky-grid and observe
+
+### Plunker 
+https://plnkr.co/edit/J8lsKHVHmR6yUA2Bhp14?p=preview",projects,"beginner,sky-grid","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/370,370,"Plunker for List View Grid broken","### Expected behavior
+The plunker should load a list view grid
+
+### Actual behavior
+The plunker just hangs at the loading view
+
+### Plunker 
+This is the Plunker from the Sky Ux 2 documentation for a List View Grid",projects,"documentation,sky-grid,sky-listbuilder","Blackbaud-PatrickOFriel",Block 1 Sprint 8 - 2/24/17,closed,undefined
+https://github.com/blackbaud/skyux2/issues/364,364,"Delete demo folder in root",,projects,"","Blackbaud-PatrickOFriel",Block 1 Sprint 8 - 2/24/17,closed,undefined
+https://github.com/blackbaud/skyux2/issues/363,363,"Only update documentation on release","Right now, the skyux 2 documentation updates on each merge into master, we should change this to update only when we release, so that the documentation reflects what is available through our npm package.",projects,"automation,documentation","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/362,362,"Add a icon to the skyux 2 documentation title",,projects,"documentation","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/361,361,"Modal content height is not bound","If the modal content gets very large, then the footer is not visible on the screen. We should do something to specify a max-height on the content so that it scrolls and the footer is always shown.
+
+Example: 
+https://plnkr.co/edit/V5tAoH4TkZlAErdJMyH8?p=preview",projects,"sky-modal","Blackbaud-PatrickOFriel",Block 2 Sprint 1 - 3/3/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/358,358,"Bottom of Card's title cut off if a "g" is present","### Expected behavior
+The full title should be seen with no text cut off.
+
+### Actual behavior
+The bottom of the ""g"" in a title with that letter is cut off
+
+### Steps to reproduce
+Place a title of ""Large card"" in a sky card and observe
+
+### Example
+This can be seen on the [Sky 2 docs for Cards](https://developer.blackbaud.com/skyux2/components/card)",projects,"bug,sky-card","Blackbaud-PatrickOFriel",Block 1 Sprint 7 - 2/17/17,closed,undefined
+https://github.com/blackbaud/skyux2/issues/357,357,"Run skyux visual tests through a skyux page","Currently we are running our visual regression tests by using webpack to serve some component fixtures up locally, and then use the local Browserstack tunnel to test using multiple browsers. 
+
+This has a couple of drawbacks:
+
+  - The Browserstack local tunnel can be flakey and disconnect randomly at times
+  - Serving up our files with webpack doesn't allow us to have as many tests running in parallel, because they start slowing down to the point of failure as we add more.
+  - Our visual tests are not being run in a environment similar to our users (SKY UX host/builder/etc)
+ 
+To solve this, we should find a way to build our visual tests as a SKY UX app, which our visual tests will then hit remotely.
+",projects,"automation","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/355,355,"Update sky-dropdown to have appropriate z-index","the menu for sky-dropdown has no explicit z-index so it can be cut off by relative elements. We should add an appropriate z-index (which is able to handle things like the dropdown menu residing in a modal)",projects,"dropdown","Blackbaud-PatrickOFriel",Block 1 Sprint 8 - 2/24/17,closed,undefined
+https://github.com/blackbaud/skyux2/issues/353,353,"Sky-search is visible during full-page wait","### Expected behavior
+A full page wait should cover all elements
+
+### Actual behavior
+If there is a sky-search on the page it is still visible when a full page wait is in effect.
+
+### Steps to reproduce
+
+1. Place a sky-toolbar with a sky-search on the page.
+2. Place a full-page sky-wait on the page
+3. Observe that the main portion of the sky-search is still visible when the wait is covering the page
+
+### Plunker
+https://plnkr.co/edit/lFnm15TgOmtq9mUfK6sH?p=preview",projects,"bug,sky-search","Blackbaud-PatrickOFriel",Block 1 Sprint 7 - 2/17/17,closed,undefined
+https://github.com/blackbaud/skyux2/issues/352,352,"Plunker uses incorrect css file","Our plunkers in the documentation page use the css files from our old npm package name, we should fix this",projects,"documentation","Blackbaud-PatrickOFriel",Block 1 Sprint 7 - 2/17/17,closed,undefined
+https://github.com/blackbaud/skyux2/issues/351,351,"Fix codecov reporting with Savage","When Savage runs a pull request build from an external contributor, code coverage is not reported back to the pull request. ",projects,"automation","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/350,350,"Upgrade Savage","Look at upgrading Savage for some security benefits",projects,"automation","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/349,349,"Update grid documentation","In the grid documentation, add information/an example for using templated columns. Also refer to the list-view-grid documentation to inform users to use the list component to get built in paging, and searching on a view of data.
+
+In the list-view-grid documentation, refer users to the grid docs for column component information and to see the grid component used under the hood.",projects,"documentation,sky-grid","Blackbaud-PatrickOFriel",Block 1 Sprint 8 - 2/24/17,closed,undefined
+https://github.com/blackbaud/skyux2/issues/348,348,"Create Side Panel Component","### Expected behavior
+The component would allow for a flyout from the side of the screen whenever something triggers the component.
+
+### Sky Ux 1 Issue
+[Issue 749 in Sky Ux 1](https://github.com/blackbaud/skyux/issues/749) correlates to this issue. 
+
+### Design Approval
+On August 24, 2016 the design for the component for Sky Ux 1 was marked as approved by @Blackbaud-ToddRoberts 
+
+His comment:
+
+> Approved.
+> Designer: Tim
+> Panel can contain arbitrary content. Styling/interaction as per RE implementation.
+> https://blackbaudinc.box.com/s/canqp79aar2b6bhza5y22mw1fqc9faau",projects,"enhancement,intermediate","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/340,340,"Document using data providers for sky-list","Right now, the documentation for lists does not go in-depth to explain how data providers work for fetching remote data for a list. We need to provide examples of using data providers to fetch remote data for lists.",projects,"documentation,sky-listbuilder","Blackbaud-PatrickOFriel",Block 1 Sprint 7 - 2/17/17,closed,undefined
+https://github.com/blackbaud/skyux2/issues/339,339,"Sky Grid Columns created with ngFor do not update if model is updated","### Expected behavior
+When creating sky-grid-column elements using an ngFor I would expect the available columns to update if the list of columns updates.
+
+### Actual behavior
+If the available columns provided to the ngFor changes the sky-grid does not update to reflect these changes. This causes trying to populate a list of available columns using an HTTP call difficult as the grid does not update with the available columns once the HTTP data is returned.
+
+### Steps to reproduce
+Create a sky grid and use an ngFor to create the sky-grid-column elements. Have the variable that the ngFor references start with some initial data. In some manner, change the data for this variable and notice that the sky-grid does not update with the new columns.
+
+### Plunker
+https://plnkr.co/edit/Db0Ly9o3jhlMNlFGYNMG?p=preview
+
+This Plunker shows the issue by showing that if you click the ""Change columns"" button the paragraph elements change but the sky-grid that references the same data does not change.",projects,"sky-grid","Blackbaud-PatrickOFriel",Block 1 Sprint 7 - 2/17/17,closed,undefined
+https://github.com/blackbaud/skyux2/issues/336,336,"Spacing issue between tabs and the tabset bottom border","### Expected behavior
+There should not be a break between the bottom of a tab and the bottom border for the tabset
+### Actual behavior
+On my Lenovo Windows 8.1 machine at 1920X1080 resolution there is a small gap between the bottom of a tab and the tabset bottom. We have determined that if the vertical padding on the anchor tab inside the sky-tab-button is changed to be 8 instead of 7 this issue is resolved. 
+
+### Steps to reproduce
+This was hard to reproduce for the SKY UX 2 team; however, the conversation around this issue can be found on the 1bb-skyux-apps Slack channel. 
+### Plunker
+No plunker due to it not appearing for all systems. However a screenshot can be found in the 1bb-skyux-apps channel on Slack. The issue can be seen on the SKY UX 2 tabs documentation for affected machines.",projects,"bug,sky-tabset","Blackbaud-PatrickOFriel",Block 1 Sprint 6 - 2/10/17,closed,undefined
+https://github.com/blackbaud/skyux2/issues/329,329,"Navbar component - submenu target area","When hovering over a submenu item in the nav bar, mouse over any part of the menu will highlight the menu item you are hovering on. However, if you are not over (or nearly over) the actual text, then the link doesn't work. Hovering the text makes the font bold, but hovering the div still highlights the div. Clicking the div closes the nav menu but doesn't navigate.
+
+This means the touch target for the menu item is much smaller and it is misleading/confusing because you see a hover state that doesn't do anything. Also, the top-level menu items have a touch target of the whole div/button area and not just the text.
+
+https://developer.blackbaud.com/skyux2/components/navbar
+
+![image](https://cloud.githubusercontent.com/assets/11995039/22595675/7ebf9e8c-e9f6-11e6-8a14-d655bd1805b2.png)
+",projects,"bug,sky-navbar","Blackbaud-PatrickOFriel",Block 1 Sprint 6 - 2/10/17,closed,undefined
+https://github.com/blackbaud/skyux2/issues/324,324,"Tile change detection does not happen when component hosting tile dashboard uses OnPush","### Expected behavior
+
+Using `ChangeDetectionStrategy.OnPush` on a component that contains a tile dashboard should have the tiles on the tile dashboard be rendered when the dashboard's config property is set.
+
+### Actual behavior
+
+Tiles are not rendered properly until change detection triggered by some other event on the tile.
+
+### Steps to reproduce
+
+- Create a component that hosts a `sky-tile-dashboard`.
+- Set its `changeDetection` property to `ChangeDetectionStrategy.OnPush`.
+- Set the tile dashboard's config to display tiles.
+- Notice that portions of the tile that are bound to a property on the controller are not displayed (you can see this in the provided Plunker where the first tile's title is not rendered and the second tile is not collapsed).
+
+### Plunker
+
+https://plnkr.co/edit/r3foEngqmxSnazESG7gy?p=preview",projects,"sky-tile","Blackbaud-PaulCrowder",Block 1 Sprint 5 - 2/3/17,closed,undefined
+https://github.com/blackbaud/skyux2/issues/323,323,"Sky-card text overflows the border","### Expected behavior
+Using a sky-key-info element within the sky-card-title results in text extending beyond the card border.
+
+Per conversation with Patrick, filing this to see if there's a bug here (this might also be chalked up to general misuse of the component, and in my case I have a workaround).
+
+### Actual behavior
+
+### Steps to reproduce
+
+### Plunker 
+https://plnkr.co/edit/ypAykqFxLqDTqF0OryR8?p=preview",projects,"bug,sky-card","Blackbaud-PatrickOFriel",Block 1 Sprint 6 - 2/10/17,closed,undefined
+https://github.com/blackbaud/skyux2/issues/321,321,"Add border when multiple sky-tile-content-sections","When multiple `sky-tile-content-sections` are in a tile, there should be a small border on the bottom.  Identified by @Blackbaud-TrevorBurch
+
+https://github.com/blackbaud/skyux/blob/master/scss/_tile.scss#L211-L213 
+
+should be ported to 
+
+https://github.com/blackbaud/skyux2/blob/master/src/modules/tiles/tile/tile.component.scss#L52-L57",projects,"sky-tile","Blackbaud-PatrickOFriel",Block 1 Sprint 6 - 2/10/17,closed,undefined
+https://github.com/blackbaud/skyux2/issues/319,319,"Create component for large buttons","https://blackbaudinc.app.box.com/s/ykhoizocl7erk3xshrtgo6ztkhgxp6b4",projects,"enhancement,sky-action-button","Blackbaud-PatrickOFriel",Block 1 Sprint 5 - 2/3/17,closed,undefined
+https://github.com/blackbaud/skyux2/issues/317,317,"Increase grid header size by dragging","Allow users to drag the right and left sides of column headers to decrease and increase the header size",projects,"intermediate,sky-grid,sky-listbuilder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/316,316,"Add grid multiselect functionality","Add a checkbox to every grid row that can allow users to select rows. Also have a checkbox in the grid header which will select/deselect all items in the grid",projects,"intermediate,sky-grid,sky-listbuilder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/315,315,"Add sort functionality to grid component headers","Allow users to click headers to indicate data should be sorted. Sort indication should display (ascending/descending) using the caret-up and caret-down icons.",projects,"sky-grid,sky-listbuilder","Blackbaud-PatrickOFriel",Block 2 Sprint 2 - 3/10/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/314,314,"Create grid column chooser service","Create a service that launches a column chooser modal that can be easily consumed with the grid component. This relies on the checklist component being created.",projects,"sky-grid,sky-listbuilder","Blackbaud-PatrickOFriel",Block 1 Sprint 8 - 2/24/17,closed,undefined
+https://github.com/blackbaud/skyux2/issues/313,313,"Listbuilder secondary actions","Create the ability to add a secondary actions dropdown to the list toolbar. Users can add the column chooser to the secondary actions dropdown when a grid view is used",projects,"port,sky-listbuilder","Blackbaud-PatrickOFriel",Block 1 Sprint 8 - 2/24/17,closed,undefined
+https://github.com/blackbaud/skyux2/issues/312,312,"Listbuilder toolbar","Create a listbuilder toolbar, which at one point will contain patterns for add button, search, sort dropdown, filtering, and view switching.
+
+For the initial implementation, integrate the existing search component into the list toolbar",projects,"port,sky-listbuilder","Blackbaud-PatrickOFriel",Block 1 Sprint 5 - 2/3/17,closed,undefined
+https://github.com/blackbaud/skyux2/issues/310,310,"Update skyux paths in component documentation","In the component documentation, the typescript examples for each component import SKY UX services, classes, etc using an import path that is relative to the SKYUX 2 repository. Instead, we should have a build step that shows the examples importing from the standard `@blackbaud/skyux` build path.",projects,"documentation","Blackbaud-PatrickOFriel",Block 1 Sprint 4 - 1/27/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/309,309,"Update tile documentation to include entryComponent information","When using tiles within a tile dashboard, the tiles are only referenced through the tile dashboard configuration. Because they're not referenced in a template, individual tile components have to be listed as entryComponents in the application. We should document this in the tile component documentation.",projects,"documentation","Blackbaud-PatrickOFriel",Block 1 Sprint 4 - 1/27/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/307,307,"The "Edit in plunker" button for modals and tiles does not work properly","This is probably due to the fact that there are multiple components within the demo and we don't account for that in our docs code. See http://developer.blackbaud.com/skyux2/components",projects,"bug,documentation","Blackbaud-PatrickOFriel",Block 1 Sprint 4 - 1/27/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/302,302,"Port over additional button variants","- secondary
+- link (note that this should behave differently than in skyux - it should maintain the 6/12 padding of regular buttons)
+- inline link ",projects,"port","Blackbaud-PatrickOFriel",Block 1 Sprint 7 - 2/17/17,closed,undefined
+https://github.com/blackbaud/skyux2/issues/301,301,"sky modal opens on left side of page IE 11","### Expected behavior
+when opening a modal we expect it to open in the center of the page
+### Actual behavior
+On IE 11 modal opens on left side of the page, despite its margin: 0 auto property being set
+![modalmishaps](https://cloud.githubusercontent.com/assets/11929859/22079042/76b91256-dd88-11e6-97e2-d2a115d7231b.PNG)
+
+### Steps to reproduce
+was unable to get your modal component working in a plunker but you can view this on your skyux2 components demo page: https://developer.blackbaud.com/skyux2/components/modal. just open the modal",projects,"bug,sky-modal","Blackbaud-PatrickOFriel",Block 1 Sprint 4 - 1/27/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/291,291,"Documentation and demo for bb-grid infinite scroll","when using the bb-infinite-scroll attribute on bb-grid, you must still resolve the promise in the `loadMoreRows` event. This notifies infinite scroll that the grid has completed loading data.  The documentation and demo do not reflect this and we should update it.",projects,"documentation","Blackbaud-PatrickOFriel",Block 1 Sprint 2 - 1/13/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/288,288,"Add documentation for the media query service",,projects,"documentation","Blackbaud-PatrickOFriel",Block 1 Sprint 3 - 1/20/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/284,284,"Add a way to specify providers in a tile dashboard","There's currently no clean way to pass context to a tile in a tile dashboard.  We should add a `providers` property to the tile config object to allow passing context to it.",projects,"sky-tile","Blackbaud-PaulCrowder",Block 1 Sprint 2 - 1/13/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/281,281,"Listbuilder card view",,projects,"difficult,sky-listbuilder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/280,280,"Listbuilder repeater view",,projects,"difficult,sky-listbuilder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/279,279,"Listbuilder multiselect functionality",,projects,"intermediate,sky-listbuilder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/278,278,"Add selectable functionality to repeater item",,projects,"beginner,sky-repeater","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/277,277,"Bundle resource strings and moment resources for the dist folder",,projects,"automation","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/274,274,"Port over the definition list functionality from SKY UX 1",,projects,"port","Blackbaud-PaulCrowder",Block 1 Sprint 1 - 1/6/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/271,271,"Create lingoport repo for sky ux 2","Set up a lingoport repository for SKY UX 2 to get automated translations in the way that we do for SKY UX 1.",projects,"automation","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/268,268,"Update media-query service to use Subject","Change media-query service to have a public current member that is a subject<SkyMediaBreakpoint> which components can subscribe to . 
+
+SkyMediaBreakpoint will have members: 
+{ 
+  xs: boolean,
+  sm: boolean,
+  md: boolean,
+  lg: boolean
+}
+
+This will be a globally provided service.",projects,"enhancement","Blackbaud-PatrickOFriel",Block 1 Sprint 1 - 1/6/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/264,264,"Lightboxing/dimming behind modals can be bypassed by scrolling/resizing","### Expected behavior
+When a modal is open, the background page is dimmed so that only the controls on the modal are clickable. The dimmed area should cover the entire page, regardless of window size and scrolling
+
+### Actual behavior
+If the page has a scrollbar, you can scroll past the dimmed area and click on navigation elements, links, etc. Also, the dimmed out area scales with the resizing of the browser window. So if you reduce the height of the browser window, you can create more clickable space that isn't dimmed
+
+### Steps to reproduce
+
+Precondition: Have a sky page that contains enough content to need scrollbars and has an action that launches a modal.
+
+1. Navigate to the sky page that meets the precondition and launch the modal.
+2. Scroll downward on the page. You'll see that the dimmed area does not extend to the bottom of the page. ![dimming01](https://cloud.githubusercontent.com/assets/21042636/21504697/17c0bef8-cc16-11e6-8fc6-6cbf43525b77.png)
+3. Resize the window. You'll see that the dimmed area resizes with the window. Creating a even larger space not covered by the dimming. If you shrink the browser window enough, you can have full access to any part of the page while the modal is still open. ![image](https://cloud.githubusercontent.com/assets/21042636/21504738/47159fd4-cc16-11e6-825d-55a4703c9c7f.png)
+
+
+",projects,"","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/255,255,"Update color scheme","Base palette
+Alerts
+Labels
+Toasts
+Text colors
+Wizard
+Collapsed tile headers",projects,"","Blackbaud-ToddRoberts",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/250,250,"Make SCSS variables/mixins available to consumers","We don't currently package the `scss` folder in our NPM distribution, so consumers of SKY UX 2 can't reference variables or mixins in their own stylesheets.",projects,"enhancement","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/249,249,"Add link to beta documentation in github readme",,projects,"documentation","blackbaud-johnly,Blackbaud-PatrickOFriel",Block 6 Sprint 8 - 12/23/2016,closed,undefined
+https://github.com/blackbaud/skyux2/issues/248,248,"Update contribution guidelines to include details about component API","Mention that the API (inputs/outputs for components) is the hardest thing to change down the road. (Internal implementation can be changed with minimal hassle) We can make a recommendation in the contribution guidelines that potential contributors can provide their potential (not working) documentation/demo code first to the SKY UX team so that we can head off any API issues before implementation happens",projects,"documentation","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/247,247,"Update color scheme to follow new design guidelines",,projects,"difficult,enhancement","Blackbaud-BobbyEarl,Blackbaud-ToddRoberts",,open,undefined
+https://github.com/blackbaud/skyux2/issues/246,246,"Update npm package and documentation for beta release",,projects,"documentation","Blackbaud-BobbyEarl,blackbaud-johnly,Blackbaud-PatrickOFriel,Blackbaud-PaulCrowder",Block 1 Sprint 1 - 1/6/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/242,242,"Sky Chevron is visually messed up on Firefox","Below is a screenshot of our app using the Sky Tile, which uses the Sky chevron to collapse/expand the tile. In Firefox, the chevron looks as it does below. We have no css changes that override the default styling on these. Have you guys seen this?
+
+<img width=""1439"" alt=""screen shot 2016-11-22 at 4 14 16 pm"" src=""https://cloud.githubusercontent.com/assets/14074848/20542608/590a8cd8-b0d0-11e6-850b-0256173909f4.png"">
+",projects,"","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/240,240,"Use npm package name in plunkr template","Instead of ""skyux/core,"" we should use ""blackbaud-skyux2"" in our plunkr templates.  This works in plunkr as we add an systemjs alias, but by using the official NPM name, it makes using it in an IDE with `node_modules/` easier.",projects,"","Blackbaud-PatrickOFriel",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/227,227,"Modal Unit Testing Issue: 'No component factory found ...'","### Expected behavior
+Expect tests to pass when modals are configured for multiple testbeds.
+
+### Actual behavior
+Tests fail with 'no component factory found..' errors for tests using modals after the initial tests using modals.
+
+### Steps to reproduce
+Found issues when creating unit tests for the SkyList PR #180. It only seems to create the testbed context once for the initial test associated with a modal. 
+
+You can recreate the issue in your current codebase by duplicating the modal.component.spec.ts and having it reference a new fixture (I used a copy of modal.component.fixture.ts with a different class name).
+
+Just let me know if you have any questions.",projects,"automation,sky-modal","",Block 6 Sprint 7 - 12/2/2016,closed,undefined
+https://github.com/blackbaud/skyux2/issues/221,221,"Get component documentation live",,projects,"documentation","blackbaud-johnly",Block 6 Sprint 7 - 12/2/2016,closed,undefined
+https://github.com/blackbaud/skyux2/issues/220,220,"Get try in plunker working in SKY UX 2 documentation",,projects,"documentation","Blackbaud-PaulCrowder",Block 6 Sprint 5 - 11/11/2016,closed,undefined
+https://github.com/blackbaud/skyux2/issues/218,218,"Port over the summary actionbar functionality",,projects,"intermediate,port,sky-listbuilder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/204,204,"Add error modal to avatar on invalid file drop","This relies on the completion of #437 
+",projects,"beginner,sky-avatar","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/193,193,"Navbar dropdowns are misaligned in Firefox",,projects,"bug,sky-navbar","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/191,191,"FOUT in Firefox is causing random visual regression test failures","Because Firefox displays text styled with a Google Font before the font is downloaded, visual regression tests fail when the screenshot is taken before the font has loaded.  Figure out a way to ensure the font has loaded before taking the screenshot.
+
+https://www.paulirish.com/2009/fighting-the-font-face-fout/
+",projects,"automation,bug","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/188,188,"Keyboard support for tabs",,projects,"beginner,sky-tabset","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/183,183,"Tabset responsive behavior doesn't occur on initial load","When a tabset with more tabs than can fit onto the screen is first loaded the tabs are not collapsed into a dropdown until the user takes an action that causes change detection to occur.
+",projects,"bug,sky-tabset","Blackbaud-PatrickOFriel",Block 6 Sprint 8 - 12/23/2016,closed,undefined
+https://github.com/blackbaud/skyux2/issues/181,181,"Create mechanism for running tests on browserstack from forks","SKYUX 1 used savage, we should probably do something similar for this repository
+",projects,"","Blackbaud-BobbyEarl",Block 6 Sprint 5 - 11/11/2016,closed,undefined
+https://github.com/blackbaud/skyux2/issues/177,177,"Investigate creating a plunker template for SKY UX 2","Figure out how to create a plunker template for SKY UX 2 so users can easily play with SKY UX 2 components for demo or issue purposes
+",projects,"","Blackbaud-PatrickOFriel",Block 6 Sprint 4 - 11/4/2016,closed,undefined
+https://github.com/blackbaud/skyux2/issues/176,176,"Alert component's close button is not vertically aligned",,projects,"","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/175,175,"Sky checkbox element isnt positioned, so absolute input is getting added to document body","The Sky checkbox element is not being positioned, and the child input field that's within the sky checkbox has a position of absolute. So the input field, as per how position: absolute behaves, is being positioned on the document body, not relative to the sky-checkbox element container
+",projects,"","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/174,174,"Port over the viewkeeper functionality",,projects,"difficult,port,sky-listbuilder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/173,173,"Port over the listbuilder view switching functionality",,projects,"intermediate,port,sky-listbuilder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/172,172,"Port over the infinite scroll component",,projects,"intermediate,port,sky-listbuilder","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/171,171,"Port over the grid component","Microedge might have an implementation we can base this upon
+",projects,"port,sky-listbuilder","Blackbaud-PatrickOFriel",Block 1 Sprint 4 - 1/27/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/170,170,"Port over the filter components","- filter button
+- filter summary
+",projects,"port,sky-listbuilder","Blackbaud-PatrickOFriel",Block 2 Sprint 6 - 4/7/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/169,169,"Port over the sort component",,projects,"port,sky-listbuilder","Blackbaud-PatrickOFriel",Block 2 Sprint 2 - 3/10/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/168,168,"Port over the search component",,projects,"port,sky-listbuilder","Blackbaud-PatrickOFriel",Block 1 Sprint 2 - 1/13/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/167,167,"Port over the popover/tooltip component",,projects,"beginner,port","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/166,166,"Allow tabs to be associated with routes","This should work similarly to tabsref in SKY UX 1
+",projects,"difficult,port","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/165,165,"Port over the wizard component","Microedge might have a component we can base this upon
+",projects,"port","Blackbaud-PatrickOFriel,Blackbaud-PaulCrowder",Block 6 Sprint 8 - 12/23/2016,closed,undefined
+https://github.com/blackbaud/skyux2/issues/164,164,"Port over the wait spinner component","Microedge might have a component we can base this upon
+",projects,"port","Blackbaud-PatrickOFriel",Block 6 Sprint 8 - 12/23/2016,closed,undefined
+https://github.com/blackbaud/skyux2/issues/163,163,"Port over the toast component",,projects,"intermediate,port","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/162,162,"Port over the text expand directive",,projects,"beginner,port","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/161,161,"Port over the scroll into view directive",,projects,"intermediate,port","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/160,160,"Port over the full page modal",,projects,"port","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/159,159,"Port over the reorder component",,projects,"intermediate,port","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/158,158,"Port over the phonefield component",,projects,"intermediate,port","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/157,157,"Port over the key info component",,projects,"port","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/156,156,"Port over the error component",,projects,"port","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/155,155,"Port over the selectfield component","This includes both the single and multiple variants. 
+
+This has a dependency on porting the checklist component
+",projects,"intermediate,port","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/152,152,"Placing a page summary and tile dashboard on the same page causes tile dashboard to not be responsive","The page summary and tile dashboard end up sharing the same instance of `SkyMediaQueryService` and so the listener in tile dashboard doesn't get registered.
+",projects,"bug,sky-tile","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/149,149,"Update navbar styles in firefox","Navbar styles in firefox seem to be slightly off when there is a navbar item followed by a navbar dropdown
+",projects,"sky-navbar","Blackbaud-PatrickOFriel",Block 6 Sprint 3 - 10/28/2016,closed,undefined
+https://github.com/blackbaud/skyux2/issues/147,147,"Add visual tests for modal",,projects,"automation","Blackbaud-PatrickOFriel",Block 6 Sprint 3 - 10/28/2016,closed,undefined
+https://github.com/blackbaud/skyux2/issues/146,146,"Examples don't load after running `npm install` and `npm start`","After cloning the repository and then running `npm install` and `npm start` and navigating to `http://localhost:3000` the list of examples does load, but after clicking on any of them, an error like this is shown in the browser console and the loading text remains on the screen indefinitely
+
+```
+client?843a:48 multi ./demo/src/tile
+Module not found: Error: Cannot resolve 'file' or 'directory' ./demo/src/./demo/src/tile/app.component.ts in C:\Users\brad.woods\Documents\sky-pages\skyux2
+resolve file
+  C:\Users\brad.woods\Documents\sky-pages\skyux2\demo\src\demo\src\tile\app.component.ts doesn't exist
+  C:\Users\brad.woods\Documents\sky-pages\skyux2\demo\src\demo\src\tile\app.component.ts.ts doesn't exist
+  C:\Users\brad.woods\Documents\sky-pages\skyux2\demo\src\demo\src\tile\app.component.ts.js doesn't exist
+resolve directory
+  C:\Users\brad.woods\Documents\sky-pages\skyux2\demo\src\demo\src\tile\app.component.ts doesn't exist (directory default file)
+  C:\Users\brad.woods\Documents\sky-pages\skyux2\demo\src\demo\src\tile\app.component.ts\package.json doesn't exist (directory description file)
+[C:\Users\brad.woods\Documents\sky-pages\skyux2\demo\src\demo\src\tile\app.component.ts]
+[C:\Users\brad.woods\Documents\sky-pages\skyux2\demo\src\demo\src\tile\app.component.ts.ts]
+[C:\Users\brad.woods\Documents\sky-pages\skyux2\demo\src\demo\src\tile\app.component.ts.js]
+ @ multi ./demo/src/tile
+```
+",projects,"","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/144,144,"File drop url","Right now we are using file reader dataURLs to get a url for the preview of an upload item. Instead we might want to look into using the window..URL.createObjectURL function to create an object URL instead of the lengthy data urls
+",projects,"beginner,sky-file-drop","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/143,143,"File drop folders","The SKY UX 1 file drop control allowed users to drag and drop folders to upload. We need to determine if this is necessary and if so, we need to build in the recursive folder crawling functionality necessary to do that. For reference, the old library we used accomplished this using [this](https://github.com/danialfarid/ng-file-upload/blob/master/src/drop.js#L228) piece of code.
+",projects,"intermediate,sky-file-drop","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/142,142,"Modal: need to disable scrolling ","There's a bug when the content behind the modal is scrollable which allows users to scroll beyond the modal mask
+",projects,"bug","Blackbaud-PatrickOFriel",Block 6 Sprint 8 - 12/23/2016,closed,undefined
+https://github.com/blackbaud/skyux2/issues/141,141,"Port over the datepicker component",,projects,"difficult,port","Blackbaud-PatrickOFriel",Block 3 Sprint 2 - 5/5/2017,open,undefined
+https://github.com/blackbaud/skyux2/issues/140,140,"Port over the pagination component",,projects,"port,sky-listbuilder","Blackbaud-PatrickOFriel",Block 1 Sprint 1 - 1/6/2017,closed,undefined
+https://github.com/blackbaud/skyux2/issues/139,139,"Sky Checkbox does not have the proper styles when it is both checked and disabled","When using the Sky checkbox component, if you check and disable the checkbox, it looks no different than when it is checked and active; You still see just the check mark with a blue background color, as if the checkbox was still active. Proper behavior should be that you see the check mark with a gray background color, the same one when it's disabled and unchecked.
+",projects,"bug,sky-checkbox","Blackbaud-PatrickOFriel",Block 6 Sprint 2 - 10/21/2016,closed,undefined
+https://github.com/blackbaud/skyux2/issues/136,136,"Css styles for Sky Checkbox are not getting used in the compiled distributed package","None of the stylings on the Sky Checkbox work when using the sky checkbox from the node package. They do work when pulling down this repo and running the demo. 
+",projects,"bug,sky-checkbox","Blackbaud-PatrickOFriel",Block 6 Sprint 2 - 10/21/2016,closed,undefined
+https://github.com/blackbaud/skyux2/issues/134,134,"Add documentation for alert using sky-pages",,projects,"documentation","Blackbaud-PaulCrowder",Block 6 Sprint 3 - 10/28/2016,closed,undefined
+https://github.com/blackbaud/skyux2/issues/132,132,"missing file","with npm module version 2.0.0-alpha.7:
+
+There is a ref to a missing file.
+
+> ERROR in ./~/blackbaud-skyux2/dist/modules/page-summary/page-summary-alert/page-summary-alert.component.js
+> Module not found: Error: Can't resolve './page-summary-alert.component.scss' in '/Users/joshgerdes/Development/microedge-moonshot-ui/node_modules/blackbaud-skyux2/dist/modules/page-summary/page-summary-alert'
+>  @ ./~/blackbaud-skyux2/dist/modules/page-summary/page-summary-alert/page-summary-alert.component.js 10:21-67
+>  @ ./~/blackbaud-skyux2/dist/modules/page-summary/page-summary-alert/index.js
+>  @ ./~/blackbaud-skyux2/dist/modules/page-summary/index.js
+>  @ ./~/blackbaud-skyux2/dist/core.js
+>  @ ./src/app/app.module.ts
+>  @ ./src/app/index.ts
+>  @ ./src/main.ts
+>  @ multi main
+",projects,"","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/129,129,"Checkbox not displaying checked state properly","When hooking up ngModel to the checkbox with a default value = true the checkbox component has a checked property value = true but does not display as checked.
+
+For an example please look at checkbox 2 on the demo.
+
+Additionally, one should be able to initialize the component in a checked and disabled state.  So please consider that use case when updating. Thanks!
+",projects,"","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/127,127,"Assess searchability of single page applications ","If we are attempting to use SKY Pages for SKY UX 2 documentation, we need to ensure that it is able to be properly searched/crawled by google. If this is not the case, we need to come up with alternatives.
+",projects,"","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/126,126,"Port over page summary component",,projects,"","Blackbaud-PaulCrowder",Block 5 Sprint 8 - 10/7/2016,closed,undefined
+https://github.com/blackbaud/skyux2/issues/124,124,"Port over the navbar",,projects,"","Blackbaud-PaulCrowder",Block 5 Sprint 8 - 10/7/2016,closed,undefined
+https://github.com/blackbaud/skyux2/issues/122,122,"Add disabled attribute to chevron","This component is usually associated with an actionable element (button, link, etc.) and it would be helpful to be able to disable this component's click functionality via an attribute.
+",projects,"","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/114,114,"Update visual regression suite to use new webdriverio and wdio-visual-regression-service",,projects,"automation","Blackbaud-PatrickOFriel",Block 6 Sprint 2 - 10/21/2016,closed,undefined
+https://github.com/blackbaud/skyux2/issues/113,113,"Port over the carousel",,projects,"intermediate,port","",,open,undefined
+https://github.com/blackbaud/skyux2/issues/112,112,"Port over the checklist component",,projects,"port","Blackbaud-PatrickOFriel",Block 1 Sprint 7 - 2/17/17,closed,undefined
+https://github.com/blackbaud/skyux2/issues/111,111,"Port over the radio checkbox component",,projects,"","Blackbaud-PatrickOFriel",Block 6 Sprint 2 - 10/21/2016,closed,undefined
+https://github.com/blackbaud/skyux2/issues/110,110,"Port over the avatar component",,projects,"","Blackbaud-PatrickOFriel",Block 6 Sprint 3 - 10/28/2016,closed,undefined
+https://github.com/blackbaud/skyux2/issues/109,109,"Port over the file attachments component ",,projects,"sky-file-drop","Blackbaud-PatrickOFriel",Block 6 Sprint 2 - 10/21/2016,closed,undefined
+https://github.com/blackbaud/skyux2/issues/95,95,"Generate declaration file with dist.",,projects,"","Blackbaud-BobbyEarl",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/94,94,"Tiles don't reorder properly when browser resized","Browser original width:
+![image](https://cloud.githubusercontent.com/assets/11943543/17625991/dd47ffcc-6070-11e6-9c67-c3e35726e802.png)
+
+Browser made smaller:  note one tile has disappeared
+![image](https://cloud.githubusercontent.com/assets/11943543/17626016/07c34482-6071-11e6-86db-203952c84d4a.png)
+
+Browser back to original size: both tiles end up in right column
+![image](https://cloud.githubusercontent.com/assets/11943543/17626030/1eefc09a-6071-11e6-8851-e5e49352eda4.png)
+
+We have provided both single and multicolumn layouts in the config:
+
+```
+layout: {
+  singleColumn: {
+    tiles: [
+      { id: 'moon-grant-summary-tile', isCollapsed: false },
+      { id: 'moon-grant-summary-tile', isCollapsed: false }
+    ]
+  },
+  multiColumn: [
+    {
+      tiles: [
+        { id: 'moon-grant-summary-tile', isCollapsed: false }
+      ]
+    },
+    {
+      tiles: [
+        { id: 'moon-grant-summary-tile', isCollapsed: false }
+      ]
+    }
+  ]
+}
+```
+",projects,"","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/93,93,"Tile width expands when long unbroken string is present","![image](https://cloud.githubusercontent.com/assets/11943543/17625760/cf2afabc-606f-11e6-9a39-118b633ac2a4.png)
+
+The old tiles kept their width at 50% in this case.  I started looking at this.  It looks like add `width: 50%;` to the class `sky-tile-dashboard-layout-multi` makes this behave better.  I also noticed that the old tiles used the bootstrap grid to get that, but it seems like you're trying to avoid getting overly dependent on bootstrap for this version.
+
+Thanks for the help.
+",projects,"","",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/87,87,"Enable Check Accessibility in Visual Regression Tests",,projects,"","Blackbaud-PatrickOFriel",Block 5 Sprint 8 - 10/7/2016,closed,undefined
+https://github.com/blackbaud/skyux2/issues/83,83,"Update checkbox to work with new forms in Angular 2 RC4",,projects,"sky-checkbox","Blackbaud-PatrickOFriel",Alpha release,closed,undefined
+https://github.com/blackbaud/skyux2/issues/66,66,"Build tabset component",,projects,"sky-tabset","Blackbaud-PaulCrowder",Alpha release,closed,undefined
+https://github.com/blackbaud/skyux2/issues/62,62,"Update Angular to RC2",,projects,"","Blackbaud-PaulCrowder",Alpha release,closed,undefined
+https://github.com/blackbaud/skyux2/issues/56,56,"Visual regression tests for key info",,projects,"automation,sky-key-info","",Alpha release,closed,undefined
+https://github.com/blackbaud/skyux2/issues/53,53,"Removing the remap-istanbul step causes source maps to not work as expected when debugging","If you remove the problematic call to remap-istanbul cited in #52 so that the watch test works, the resulting code in the browser is the transpiled JavaScript, not the original TypeScript as it was before #49 was merged.  You can see this by running `npm run watch:test`, then opening http://localhost:9876/debug.html in a web browser and using the browser's developer tools to view the source files.
+",projects,"automation,unit testing","Blackbaud-BobbyEarl",Alpha release,closed,undefined
+https://github.com/blackbaud/skyux2/issues/52,52,"Adding call to remap-istanbul breaks the watch:test task","If you run `npm run watch:test`, the tests run once and then the process is terminated.  The process should continue to run so that subsequent file changes can trigger test runs as well as so debugging the tests is possible by launching http://localhost:9876/debug.html in a web browser.
+",projects,"automation,unit testing","Blackbaud-BobbyEarl",Alpha release,closed,undefined
+https://github.com/blackbaud/skyux2/issues/48,48,"npm install","Unable to properly add a reference to this repository via npm install currently. Seems to only grab CHANGELOG/LICENSE/README and package.json, then blows up.
+
+Using a git submodule in the interim to access your scss/components from our prototype app.
+",projects,"","Blackbaud-PaulCrowder",,closed,undefined
+https://github.com/blackbaud/skyux2/issues/47,47,"Implement single/multi-column tile dashboard layout",,projects,"sky-tile","Blackbaud-PaulCrowder",Alpha release,closed,undefined
+https://github.com/blackbaud/skyux2/issues/42,42,"Move tile source files into folders","The tile folder has too many files.  Break these up into subfolders.
+",projects,"sky-tile","Blackbaud-PaulCrowder",Alpha release,closed,undefined
+https://github.com/blackbaud/skyux2/issues/41,41,"Unit tests for slide animation service",,projects,"automation,unit testing","Blackbaud-PaulCrowder",,open,undefined
+https://github.com/blackbaud/skyux2/issues/40,40,"Implement visual regression test strategy","We need to figure out the right strategy for implementing visual regression tests.  While what we have in SKY UX 1 works, the tests are relatively slow.  Can we speed these up by perhaps putting every element on one page and showing/hiding them during the test rather than navigating to a new page for every test?
+",projects,"automation","Blackbaud-BobbyEarl",Alpha release,closed,undefined
+https://github.com/blackbaud/skyux2/issues/39,39,"Visual regression test for tile",,projects,"automation,sky-tile","Blackbaud-PatrickOFriel",Block 6 Sprint 3 - 10/28/2016,closed,undefined
+https://github.com/blackbaud/skyux2/issues/38,38,"Visual regression tests for repeater",,projects,"automation,sky-repeater","",Alpha release,closed,undefined
+https://github.com/blackbaud/skyux2/issues/37,37,"Visual regression tests for checkbox",,projects,"automation","",Alpha release,closed,undefined
+https://github.com/blackbaud/skyux2/issues/36,36,"Visual regression tests for card",,projects,"automation,sky-card","",Alpha release,closed,undefined
+https://github.com/blackbaud/skyux2/issues/35,35,"Visual regression tests for alert",,projects,"automation,sky-alert","",Alpha release,closed,undefined
+https://github.com/blackbaud/skyux2/issues/34,34,"Figure out how to map code coverage back to TS files","When viewing the HTML report generated by Istanbul during unit test runs, the code coverage displayed is for the transpiled JS code rather than the original TS code.  In CodeCov the TS code is displayed but the highlighted lines match up with the transpiled JS code.  We need to figure out a way to use something like [remap-instanbul](https://github.com/SitePen/remap-istanbul) to map coverage back to the original TS file.
+
+There's a [thread on the angular2-webpack-starter repo](https://github.com/AngularClass/angular2-webpack-starter/issues/178) on which the SKY UX 2 project is based that describes difficulties integrating remap-istanbul with their project.
+",projects,"automation,unit testing","Blackbaud-BobbyEarl",Alpha release,closed,undefined
+https://github.com/blackbaud/skyux2/issues/32,32,"Add aria-checked attribute to sky-checkbox","This is an accessibility rule required when an element has the `check` role
+",projects,"accessibility,sky-checkbox","Blackbaud-PatrickOFriel",Alpha release,closed,undefined
