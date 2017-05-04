@@ -70,8 +70,7 @@
             labels,
             milestone,
             status,
-            assignees,
-            pullrequest;
+            assignees;
 
 
         for (i = 0; i < issues.length; i++) {
